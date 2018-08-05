@@ -1,0 +1,127 @@
+{
+    "frames": {
+        "big_wall_img1.png": {
+            "frame": {
+                "h": 86,
+                "idx": 0,
+                "w": 111,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 22
+            }
+        },
+        "big_wall_img2.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 111,
+                "x": 112,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 23
+            }
+        },
+        "big_wall_img3.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 111,
+                "x": 224,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 22
+            }
+        },
+        "big_wall_img4.png": {
+            "frame": {
+                "h": 87,
+                "idx": 0,
+                "w": 111,
+                "x": 112,
+                "y": 86
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 11,
+                "y": 21
+            }
+        },
+        "big_wall_img5.png": {
+            "frame": {
+                "h": 87,
+                "idx": 0,
+                "w": 111,
+                "x": 0,
+                "y": 87
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 22
+            }
+        },
+        "big_wall_img6.png": {
+            "frame": {
+                "h": 86,
+                "idx": 0,
+                "w": 110,
+                "x": 224,
+                "y": 86
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 22
+            }
+        },
+        "big_wall_img7.png": {
+            "frame": {
+                "h": 85,
+                "idx": 0,
+                "w": 111,
+                "x": 224,
+                "y": 173
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 10,
+                "y": 23
+            }
+        }
+    },
+    "meta": {
+        "image": "2-wallpaper.png",
+        "prefix": "2-wallpaper/"
+    }
+}
