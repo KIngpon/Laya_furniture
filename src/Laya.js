@@ -39,16 +39,33 @@ function onMain(){
 
 function onTab(){
     this.ts = new ui.tabSelectUI();
-    this.ts.y = 885;
+    this.ts.y = 885-105;
     this.ts.width = Laya.Browser.width;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
-    this.ts.tab.selectHandler = new Laya.Handler(this,onSelect);
     this.ts.preview.on(Laya.Event.CLICK,this,onPreview);
+    this.ts.viewStack.on(Laya.Event.CLICK,this,onStackClick);
+    this.ts.tab.selectHandler = new Laya.Handler(this,onSelect);        
+    console.info(this.ts.viewStack);
+    for(var i in this.ts.viewStack._childs){
+        var item = this.ts.viewStack._childs[i];
+        for(var k in item._childs[0]._childs){
+            var image = item._childs[0]._childs[k]; //this.ts.viewStack._childs[i]._childs[0][k]
+            image.on(Laya.Event.CLICK,this,onImageClick);
+        }
+    }
 }
 
 function onPreview(){
     console.info("preview")
+}
+
+function onStackClick(d){
+    console.info(d)
+}
+
+function onImageClick(f){
+    console.info(f)
 }
 
 function onSelect(index){
