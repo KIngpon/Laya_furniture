@@ -1,3 +1,4 @@
 <res>
    <item name="home/0-tab/conbg.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=100,100,100,100" picType="0" scale="0"/>
+   <item name="home/top/photo_icon.png" type="Button" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
 </res>
