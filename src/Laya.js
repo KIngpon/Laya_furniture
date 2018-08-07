@@ -1,5 +1,6 @@
 var WebGL = laya.webgl.WebGL;
 Laya.init(750, 1334, WebGL);
+Laya.stage.bgColor = "#fff";
 Laya.stage.scaleMode = "exactfit";
 
 Laya.loader.load( ["res/atlas/home/0-tab.atlas",
@@ -69,15 +70,43 @@ function onStackClick(d){
 function onImageClick(f){
  console.info(f,f.target instanceof Laya.Image)    
     if(f.target instanceof Laya.Image){
-
+        var skin = f.target._skin;
         // this.main.floor.skin = f.target._skin;
-         console.info(f.target._skin);
+         console.info(skin);
         //  Laya.stage.addChild(this.main); 
-        this.main.floor.graphics.clear();
-        this.main.floor.loadImage(f.target._skin,0,0,this.main.floor.width,this.main.floor.height);
+        var skins = skin.split("/");
+        var filename = skins[skins.length - 1];
+        skins[skins.length - 1] = "750_"+skins[skins.length - 1].substr(4);
+        var newskin = skins.join("/");
+        switch(skins[skins.length -2]){
+                case "1-floor":
+                this.main.floor.graphics.clear();
+                this.main.floor.loadImage(newskin,0,0,this.main.floor.width,this.main.floor.height);
+                break;
+                case "2-wallpaper":
+                this.main.wall.graphics.clear();
+                this.main.wall.loadImage(newskin,0,0,this.main.wall.width,this.main.wall.height);
+                break;
+                default:
+                    insertSprite(newskin);
+                break;
+        }
+        
     }
 }
 
 function onSelect(index){
     this.ts.viewStack.selectedIndex = index;
+}
+
+function insertSprite(skin){
+    var s = new Laya.Sprite();
+    
+    s.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
+        console.info(d)
+        s.pos(this.main.wall.width/2 - d.width/2 ,this.main.wall.height/2 - d.height/2);
+        Laya.stage.addChild(s);
+        s.size(s.width,s.height);
+    }))
+    
 }
