@@ -3,8 +3,7 @@ Laya.init(750, 1334, WebGL);
 Laya.stage.bgColor = "#fff";
 Laya.stage.scaleMode = "exactfit";
 
-onStart();
-Laya.loader.load(["res/atlas/home/0-home.atlas"],this.onStart);
+Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStart));
 
 
 function onStart(){

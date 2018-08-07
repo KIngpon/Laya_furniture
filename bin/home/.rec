@@ -1,5 +1,5 @@
 D .
-R CFFA7DD9 .rec
+R 567E510A .rec
 R 8C9EF109 0-home.atlas
 R 438B6E6 0-home.png
 R 48AFB6D 0-tab.atlas
@@ -22,7 +22,7 @@ R E0BC5139 top.atlas
 R 6CDED4DC top.png
 D 0-home
 R 333810FE bg.png
-P 2EFD7D43 but.png
+P 2EFD7D43 btn_but.png
 R A6830469 font.png
 P 2CE01573 img.png
 P D47819F9 logo.png
@@ -30,6 +30,11 @@ P 958AA27A tle.png
 D 0-tab
 P AEB63F56 atab_bg.png
 P 4048AD07 atab_bg_white.png
+P 8BB7628C btn_tap0.png
+P 3B7A41B2 btn_tap1.png
+P 4483C230 btn_tap2.png
+P BEF5BBE1 btn_tap3.png
+P 6E58FA2D btn_tap4.png
 R 0A09684B conbg.png
 P A9CE2CB6 floor_tab.png
 P 9EC36693 sark_tab.png
@@ -37,14 +42,14 @@ P 32F48514 sofa_tab.png
 P 619E7A0F wall_tab.png
 P 247CC2D0 window_tab.png
 D 1-floor
-R 3F749D78 750_floor_img1.png
-R 0BEC898A 750_floor_img2.png
-R 3C5BDACF 750_floor_img3.png
-R 481415C3 750_floor_img4.png
-R 9A211745 750_floor_img5.png
-R F20295BE 750_floor_img6.png
-R EC12FB24 750_floor_img7.png
-R A87BFE0F 750_floor_img8.png
+R AE56D2CC 750_floor_img1.png
+R AD9B295A 750_floor_img2.png
+R 7BB54B23 750_floor_img3.png
+R 51119E04 750_floor_img4.png
+R 78893B58 750_floor_img5.png
+R 4BAF29C2 750_floor_img6.png
+R 78511C9C 750_floor_img7.png
+R 9973998D 750_floor_img8.png
 P E7D2CAAA big_floor_img1.png
 P 67A17BA9 big_floor_img2.png
 P A62339D0 big_floor_img3.png
@@ -69,15 +74,15 @@ P B45CB602 big_wall_img5.png
 P 817CD98E big_wall_img6.png
 P F34411E5 big_wall_img7.png
 D 3-sofa
-R CF7F3C59 750_sofa_img1.png
-R D0C4F007 750_sofa_img2.png
-R 051D3E34 750_sofa_img3.png
-R 8F87D6D6 750_sofa_img4.png
-R F581CC47 750_sofa_img5.png
-R 0B574F2A 750_sofa_img6.png
-R E9C4D854 750_sofa_img7.png
-R 54091A4A 750_sofa_img8.png
-R A1E50E1E 750_sofa_img9.png
+P 604D0DE5 750_sofa_img1.png
+R 138E3932 750_sofa_img2.png
+P EF25C364 750_sofa_img3.png
+P CEB2D1BE 750_sofa_img4.png
+P A91C3B39 750_sofa_img5.png
+P 8E93EADF 750_sofa_img6.png
+R 233A73D1 750_sofa_img7.png
+P 3012F837 750_sofa_img8.png
+P 68468064 750_sofa_img9.png
 P B0D06955 big_sofa_img1.png
 P C13B1063 big_sofa_img2.png
 P 8D88211D big_sofa_img3.png
@@ -89,16 +94,16 @@ P 6FCEB475 big_sofa_img8.png
 P E7EAB498 big_sofa_img9.png
 D 4-cabinet
 R E15B17B9 750_sark_img1.png
-R FCF08167 750_sark_img10.png
-R F297EB26 750_sark_img11.png
-R EADA5844 750_sark_img2.png
-R A6DF0CEE 750_sark_img3.png
-R 5D0622E3 750_sark_img4.png
-R 3629C8E9 750_sark_img5.png
-R E30047BD 750_sark_img6.png
-R EC75826A 750_sark_img7.png
-R A6083331 750_sark_img8.png
-R A01C084F 750_sark_img9.png
+R 344856EC 750_sark_img10.png
+R 0A39023B 750_sark_img11.png
+R 23F8E087 750_sark_img2.png
+R A73CA935 750_sark_img3.png
+R 8B7E4EAE 750_sark_img4.png
+R 99F04B61 750_sark_img5.png
+R C4478407 750_sark_img6.png
+R 5AF3C54D 750_sark_img7.png
+R 224C57A6 750_sark_img8.png
+R FC8B5253 750_sark_img9.png
 P E69D1F12 big_sark_img1.png
 P 0C3542C0 big_sark_img10.png
 P 1AF082FA big_sark_img11.png
@@ -111,18 +116,18 @@ P 6FE82C41 big_sark_img7.png
 P 43D48A9A big_sark_img8.png
 P 035B300D big_sark_img9.png
 D 5-window
-R 22B7A8FA 750_window_img1.png
-R AF76B242 750_window_img10.png
-R 3F16BA56 750_window_img11.png
-R 011D47CB 750_window_img12.png
-R 2B7E3FB2 750_window_img2.png
-R A48F8D8A 750_window_img3.png
-R AEDD30FE 750_window_img4.png
-R C9D7FFDA 750_window_img5.png
-R 681AB8CD 750_window_img6.png
-R 1AE7171E 750_window_img7.png
-R 0C8D9F28 750_window_img8.png
-R BCAAC318 750_window_img9.png
+P 062C2479 750_window_img1.png
+P 0C714870 750_window_img10.png
+P EE603BC2 750_window_img11.png
+P EEEA770B 750_window_img12.png
+P A0B2F677 750_window_img2.png
+P 347FB731 750_window_img3.png
+P 1F1AC3A4 750_window_img4.png
+P F02CBC7C 750_window_img5.png
+P 0857FE66 750_window_img6.png
+P 00A956CE 750_window_img7.png
+P DA6C6B90 750_window_img8.png
+P 2BBF3178 750_window_img9.png
 P D7504565 big_window_img1.png
 P E17C2565 big_window_img10.png
 P ACB34FBB big_window_img11.png
