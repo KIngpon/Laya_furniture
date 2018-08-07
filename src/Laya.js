@@ -35,11 +35,11 @@ function onProgress(d){
 }
 
 function onStartClick(){
-    console.info(777)
     onMain();
     onTab();
     Laya.stage.removeChildAt(0);
     // console.info(Laya.stage);
+    showDragRegion();
 }
 
 function onMain(){
@@ -55,11 +55,11 @@ function onMain(){
 
 function onTab(){
     this.ts = new ui.tabSelectUI();
-    this.ts.y = 885-105;
+    this.ts.y = 885;//-105;
     this.ts.width = Laya.Browser.width;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
-    this.ts.preview.on(Laya.Event.CLICK,this,onPreview);
+    
     this.ts.viewStack.on(Laya.Event.CLICK,this,onStackClick);
     this.ts.tab.selectHandler = new Laya.Handler(this,onSelect);        
     console.info(this.ts.viewStack);
@@ -70,9 +70,22 @@ function onTab(){
             image.on(Laya.Event.CLICK,this,onImageClick);
         }
     }
+    onPreview();
 }
 
 function onPreview(){
+    this.preview = new Laya.Button();
+    this.preview.skin = "home/top/photo_icon.png";
+    this.preview.x =  Laya.stage.width - 105;
+    this.preview.y =885-105;
+    this.preview.stateNum = 1;
+    this.preview.width = 82;
+    this.preview.height = 82;
+    Laya.stage.addChild(this.preview);
+    this.preview.on(Laya.Event.CLICK,this,onPreviewClick);
+}
+
+function onPreviewClick(){
     console.info("preview")
 }
 
@@ -118,8 +131,30 @@ function insertSprite(skin){
     s.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
         console.info(d)
         s.pos(this.main.wall.width/2 - d.width/2 ,this.main.wall.height/2 - d.height/2);
-        Laya.stage.addChild(s);
+        // Laya.stage.addChild(s);
+        this.main.home.addChild(s);
         s.size(s.width,s.height);
+        s.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
     }))
     
 }
+
+/**
+ * 拖动区域
+ */
+var dragRegion;
+
+function showDragRegion()
+	{
+		//拖动限制区域
+		var dragWidthLimit = this.main.home.width;
+		var dragHeightLimit = this.main.home.height;
+		//dragRegion = new Laya.Rectangle(Laya.stage.width - dragWidthLimit >> 1, Laya.stage.height - dragHeightLimit >> 1, dragWidthLimit, dragHeightLimit);
+	}
+
+	function onStartDrag(e)
+	{
+        console.info(e)
+		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
+		e.target.startDrag(null, true, 100);
+	}

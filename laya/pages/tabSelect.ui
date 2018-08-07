@@ -2,8 +2,9 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":107,
-    "props":{"y":0,"x":0,"width":750,"var":"tabSelect","sceneColor":"#000000","height":555},
+    "selecteID":105,
+    "referenceLines":null,
+    "props":{"y":0,"x":0,"width":750,"var":"tabSelect","sceneColor":"#000000","height":453},
     "nodeParent":-1,
     "label":"View(tabSelect)",
     "isOpen":true,
@@ -15,7 +16,7 @@
         {
             "x":15,
             "type":"Tab",
-            "props":{"y":103,"x":0,"width":750,"var":"tab","selectedIndex":0,"height":56},
+            "props":{"y":0,"x":0,"width":750,"var":"tab","selectedIndex":0,"height":56},
             "nodeParent":1,
             "label":"Tab(tab)",
             "isOpen":false,
@@ -26,7 +27,7 @@
             "child":[
                 {
                     "type":"Button",
-                    "props":{"stateNum":"2","skin":"home/0-tab/btn_tap0.png","name":"item0"},
+                    "props":{"stateNum":2,"skin":"home/0-tab/btn_tap0.png","name":"item0"},
                     "nodeParent":26,
                     "label":"Button(item0)",
                     "isDirectory":false,
@@ -38,7 +39,7 @@
                 },
                 {
                     "type":"Button",
-                    "props":{"x":150,"stateNum":"2","skin":"home/0-tab/btn_tap1.png","name":"item1"},
+                    "props":{"x":150,"stateNum":2,"skin":"home/0-tab/btn_tap1.png","name":"item1"},
                     "nodeParent":26,
                     "label":"Button(item1)",
                     "isDirectory":false,
@@ -50,7 +51,7 @@
                 },
                 {
                     "type":"Button",
-                    "props":{"x":300,"stateNum":"2","skin":"home/0-tab/btn_tap2.png","name":"item2"},
+                    "props":{"x":300,"stateNum":2,"skin":"home/0-tab/btn_tap2.png","name":"item2"},
                     "nodeParent":26,
                     "label":"Button(item2)",
                     "isDirectory":false,
@@ -62,7 +63,7 @@
                 },
                 {
                     "type":"Button",
-                    "props":{"x":450,"stateNum":"2","skin":"home/0-tab/btn_tap3.png","name":"item3"},
+                    "props":{"x":450,"stateNum":2,"skin":"home/0-tab/btn_tap3.png","name":"item3"},
                     "nodeParent":26,
                     "label":"Button(item3)",
                     "isDirectory":false,
@@ -74,7 +75,7 @@
                 },
                 {
                     "type":"Button",
-                    "props":{"x":600,"stateNum":"2","skin":"home/0-tab/btn_tap4.png","name":"item4"},
+                    "props":{"x":600,"stateNum":2,"skin":"home/0-tab/btn_tap4.png","name":"item4"},
                     "nodeParent":26,
                     "label":"Button(item4)",
                     "isDirectory":false,
@@ -88,7 +89,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":159,"x":0,"var":"tabHeader","skin":"home/0-tab/conbg.png"},
+            "props":{"y":56,"x":0,"var":"tabHeader","skin":"home/0-tab/conbg.png"},
             "nodeParent":1,
             "label":"Image(tabHeader)",
             "isDirectory":false,
@@ -101,7 +102,7 @@
         {
             "x":15,
             "type":"ViewStack",
-            "props":{"y":159,"x":0,"var":"viewStack"},
+            "props":{"y":56,"x":0,"var":"viewStack"},
             "nodeParent":1,
             "label":"ViewStack(viewStack)",
             "isOpen":false,
@@ -115,7 +116,6 @@
                     "props":{"width":750,"var":"floor","vScrollBarSkin":"comp/vscroll.png","name":"item0","height":394},
                     "nodeParent":105,
                     "label":"Panel(floor)",
-                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -131,8 +131,7 @@
                             "hasChild":false,
                             "compId":5,
                             "child":[
-                                ],
-                            "$LOCKED":false
+                                ]
                         },
                         {
                             "type":"Image",
@@ -144,8 +143,7 @@
                             "hasChild":false,
                             "compId":6,
                             "child":[
-                                ],
-                            "$LOCKED":false
+                                ]
                         },
                         {
                             "type":"Image",
@@ -157,8 +155,7 @@
                             "hasChild":false,
                             "compId":7,
                             "child":[
-                                ],
-                            "$LOCKED":false
+                                ]
                         },
                         {
                             "type":"Image",
@@ -226,7 +223,6 @@
                     "props":{"width":750,"var":"wall","vScrollBarSkin":"comp/vscroll.png","name":"item1","height":394},
                     "nodeParent":105,
                     "label":"Panel(wall)",
-                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -322,7 +318,6 @@
                     "props":{"width":750,"var":"sofa","vScrollBarSkin":"comp/vscroll.png","name":"item2","height":394},
                     "nodeParent":105,
                     "label":"Panel(sofa)",
-                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -442,7 +437,6 @@
                     "props":{"width":750,"var":"cabinet","vScrollBarSkin":"comp/vscroll.png","name":"item3","height":394},
                     "nodeParent":105,
                     "label":"Panel(cabinet)",
-                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -586,7 +580,6 @@
                     "props":{"width":750,"var":"window","vScrollBarSkin":"comp/vscroll.png","name":"item4","height":394},
                     "nodeParent":105,
                     "label":"Panel(window)",
-                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
@@ -737,19 +730,6 @@
                                 ]
                         }]
                 }]
-        },
-        {
-            "x":15,
-            "type":"Button",
-            "props":{"y":-2,"x":632,"var":"preview","stateNum":"1","skin":"home/top/photo_icon.png"},
-            "nodeParent":1,
-            "label":"Button(preview)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":107,
-            "child":[
-                ]
         }],
     "animations":[
         {
