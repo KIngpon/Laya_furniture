@@ -45,6 +45,7 @@ var sharePageUI=(function(_super){
 var startPageUI=(function(_super){
 		function startPageUI(){
 			
+		    this.percent=null;
 		    this.start=null;
 
 			startPageUI.__super.call(this);
@@ -59,7 +60,7 @@ var startPageUI=(function(_super){
 
 		}
 
-		startPageUI.uiView={"type":"View","props":{"width":750,"height":1334},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"home/0-home/bg.png"}},{"type":"Image","props":{"y":48,"x":429,"skin":"home/0-home/logo.png"}},{"type":"Image","props":{"y":191,"x":114,"skin":"home/0-home/tle.png"}},{"type":"Image","props":{"y":377,"x":134,"skin":"home/0-home/img.png"}},{"type":"Image","props":{"y":916,"x":-1,"skin":"home/0-home/font.png"}},{"type":"Button","props":{"y":1190,"x":220,"var":"start","stateNum":1,"skin":"home/0-home/btn_but.png"}}]};
+		startPageUI.uiView={"type":"View","props":{"width":750,"height":1334},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"home/0-home/bg.png"}},{"type":"Image","props":{"y":48,"x":429,"skin":"home/0-home/logo.png"}},{"type":"Image","props":{"y":191,"x":114,"skin":"home/0-home/tle.png"}},{"type":"Image","props":{"y":377,"x":134,"skin":"home/0-home/img.png"}},{"type":"Image","props":{"y":916,"x":-1,"skin":"home/0-home/font.png"}},{"type":"Label","props":{"y":1209,"x":266,"width":160,"var":"percent","text":"内容加载中","height":25,"fontSize":16,"color":"#848e8e","align":"center"}},{"type":"Button","props":{"y":1190,"x":220,"var":"start","stateNum":1,"skin":"home/0-home/btn_but.png"}}]};
 		return startPageUI;
 	})(View);
 var tabSelectUI=(function(_super){

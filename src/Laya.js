@@ -3,7 +3,15 @@ Laya.init(750, 1334, WebGL);
 Laya.stage.bgColor = "#fff";
 Laya.stage.scaleMode = "exactfit";
 
-Laya.loader.load( ["res/atlas/home/0-tab.atlas",
+onStart();
+
+
+
+function onStart(){
+    this.start = new ui.startPageUI();
+    this.startx = this.start.start.x;
+    this.start.start.x = this.start.start.width * -1;
+    Laya.loader.load( ["res/atlas/home/0-tab.atlas",
 "res/atlas/home/0-home.atlas",
 "res/atlas/home/1-floor.atlas",
 "res/atlas/home/2-wallpaper.atlas",
@@ -11,14 +19,21 @@ Laya.loader.load( ["res/atlas/home/0-tab.atlas",
 "res/atlas/home/4-cabinet.atlas",
 "res/atlas/home/5-window.atlas",
 "res/atlas/home/top.atlas",
-"res/atlas/comp.atlas"],Laya.Handler.create(this,onStart));
-
-function onStart(){
-    this.start = new ui.startPageUI();
+"res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
     this.start.y = 0;
     this.start.width = Laya.Browser.width;
     Laya.stage.addChild(this.start);
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
+}
+
+function onProgress(d){
+    this.start.percent.text = "内容加载中..."+(d * 100).toFixed(2)+"%";
+    // console.info(d)
+    if(d ==1){
+        this.start.percent.visible = false;
+        this.start.start.x = this.startx;
+        this.start.start.loadImage(this.start.start.skin)
+    }
 }
 
 function onStartClick(){
