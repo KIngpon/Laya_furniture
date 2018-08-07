@@ -65,7 +65,13 @@ function onStackClick(d){
 }
 
 function onImageClick(f){
-    console.info(f)
+    
+    if(f.target instanceof Laya.Image){
+// console.info(f)
+        this.main.floor.skin = f.target._skin;
+        console.info(this.main.floor);
+         Laya.stage.addChild(this.main); 
+    }
 }
 
 function onSelect(index){

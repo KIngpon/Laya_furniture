@@ -20,7 +20,7 @@ var mainPageUI=(function(_super){
 
 		}
 
-		mainPageUI.uiView={"type":"View","props":{"width":750,"height":1334},"child":[{"type":"Image","props":{"y":0,"x":0,"var":"wall","skin":"home/top/wall_bg.png"}},{"type":"Image","props":{"y":729,"x":0,"width":750,"var":"floor","skin":"home/top/floot_bg.png","height":607}}]};
+		mainPageUI.uiView={"type":"View","props":{"width":750,"height":1334},"child":[{"type":"Image","props":{"y":0,"x":0,"var":"wall","skin":"home/top/wall_bg.png"}},{"type":"Image","props":{"y":728,"x":0,"width":750,"var":"floor","skin":"home/top/floot_bg.png","height":607}}]};
 		return mainPageUI;
 	})(View);
 var sharePageUI=(function(_super){

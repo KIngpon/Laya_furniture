@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":1,
+    "selecteID":3,
     "props":{"width":750,"var":"mainPage","sceneColor":"#000000","height":1334},
     "nodeParent":-1,
     "label":"View(mainPage)",
@@ -28,7 +28,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":729,"x":0,"width":750,"var":"floor","skin":"home/top/floot_bg.png","height":607},
+            "props":{"y":728,"x":0,"width":750,"var":"floor","skin":"home/top/floot_bg.png","height":607},
             "nodeParent":1,
             "label":"Image(floor)",
             "isDirectory":false,
