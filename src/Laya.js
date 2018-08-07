@@ -32,6 +32,8 @@ function onMain(){
     this.main = new ui.mainPageUI();
     this.main.y = 0;
     this.main.width = Laya.Browser.width;
+    this.main.wall.loadImage("home/top/wall_bg.png",0,0,this.main.wall.width,this.main.wall.height);
+    this.main.floor.loadImage("home/top/floot_bg.png",0,0,this.main.floor.width,this.main.floor.height);
     Laya.stage.addChild(this.main);    
 }
 
@@ -65,12 +67,14 @@ function onStackClick(d){
 }
 
 function onImageClick(f){
-    
+ console.info(f,f.target instanceof Laya.Image)    
     if(f.target instanceof Laya.Image){
-// console.info(f)
-        this.main.floor.skin = f.target._skin;
-        console.info(this.main.floor);
-         Laya.stage.addChild(this.main); 
+
+        // this.main.floor.skin = f.target._skin;
+         console.info(f.target._skin);
+        //  Laya.stage.addChild(this.main); 
+        this.main.floor.graphics.clear();
+        this.main.floor.loadImage(f.target._skin,0,0,this.main.floor.width,this.main.floor.height);
     }
 }
 
