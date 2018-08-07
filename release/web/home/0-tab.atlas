@@ -1,0 +1,127 @@
+{
+    "frames": {
+        "atab_bg.png": {
+            "frame": {
+                "h": 56,
+                "idx": 0,
+                "w": 150,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "atab_bg_white.png": {
+            "frame": {
+                "h": 56,
+                "idx": 0,
+                "w": 150,
+                "x": 0,
+                "y": 57
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "floor_tab.png": {
+            "frame": {
+                "h": 41,
+                "idx": 0,
+                "w": 61,
+                "x": 0,
+                "y": 114
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 44,
+                "y": 8
+            }
+        },
+        "sark_tab.png": {
+            "frame": {
+                "h": 44,
+                "idx": 0,
+                "w": 37,
+                "x": 151,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 56,
+                "y": 7
+            }
+        },
+        "sofa_tab.png": {
+            "frame": {
+                "h": 45,
+                "idx": 0,
+                "w": 64,
+                "x": 62,
+                "y": 114
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 43,
+                "y": 6
+            }
+        },
+        "wall_tab.png": {
+            "frame": {
+                "h": 42,
+                "idx": 0,
+                "w": 61,
+                "x": 127,
+                "y": 114
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 44,
+                "y": 8
+            }
+        },
+        "window_tab.png": {
+            "frame": {
+                "h": 47,
+                "idx": 0,
+                "w": 36,
+                "x": 151,
+                "y": 45
+            },
+            "sourceSize": {
+                "h": 56,
+                "w": 150
+            },
+            "spriteSourceSize": {
+                "x": 57,
+                "y": 5
+            }
+        }
+    },
+    "meta": {
+        "image": "0-tab.png",
+        "prefix": "0-tab/"
+    }
+}

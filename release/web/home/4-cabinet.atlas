@@ -1,0 +1,195 @@
+{
+    "frames": {
+        "big_sark_img1.png": {
+            "frame": {
+                "h": 62,
+                "idx": 0,
+                "w": 118,
+                "x": 0,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 6,
+                "y": 34
+            }
+        },
+        "big_sark_img10.png": {
+            "frame": {
+                "h": 118,
+                "idx": 0,
+                "w": 70,
+                "x": 119,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 35,
+                "y": 4
+            }
+        },
+        "big_sark_img11.png": {
+            "frame": {
+                "h": 122,
+                "idx": 0,
+                "w": 44,
+                "x": 0,
+                "y": 63
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 43,
+                "y": 4
+            }
+        },
+        "big_sark_img2.png": {
+            "frame": {
+                "h": 120,
+                "idx": 0,
+                "w": 34,
+                "x": 45,
+                "y": 63
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 48,
+                "y": 5
+            }
+        },
+        "big_sark_img3.png": {
+            "frame": {
+                "h": 116,
+                "idx": 0,
+                "w": 92,
+                "x": 80,
+                "y": 119
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 19,
+                "y": 7
+            }
+        },
+        "big_sark_img4.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 94,
+                "x": 173,
+                "y": 119
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 18,
+                "y": 14
+            }
+        },
+        "big_sark_img5.png": {
+            "frame": {
+                "h": 98,
+                "idx": 0,
+                "w": 102,
+                "x": 190,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 14,
+                "y": 16
+            }
+        },
+        "big_sark_img6.png": {
+            "frame": {
+                "h": 34,
+                "idx": 0,
+                "w": 106,
+                "x": 173,
+                "y": 222
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 12,
+                "y": 48
+            }
+        },
+        "big_sark_img7.png": {
+            "frame": {
+                "h": 112,
+                "idx": 0,
+                "w": 72,
+                "x": 268,
+                "y": 99
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 29,
+                "y": 9
+            }
+        },
+        "big_sark_img8.png": {
+            "frame": {
+                "h": 102,
+                "idx": 0,
+                "w": 52,
+                "x": 341,
+                "y": 0
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 39,
+                "y": 14
+            }
+        },
+        "big_sark_img9.png": {
+            "frame": {
+                "h": 109,
+                "idx": 0,
+                "w": 70,
+                "x": 341,
+                "y": 103
+            },
+            "sourceSize": {
+                "h": 130,
+                "w": 130
+            },
+            "spriteSourceSize": {
+                "x": 30,
+                "y": 11
+            }
+        }
+    },
+    "meta": {
+        "image": "4-cabinet.png",
+        "prefix": "4-cabinet/"
+    }
+}
