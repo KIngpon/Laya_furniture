@@ -56,10 +56,13 @@ function onMain(){
 
 function onTab(){
     this.ts = new ui.tabSelectUI();
+    //this.ts.width = Laya.Browser.width;
+    this.ts.scaleX = Laya.stage.width / 950;
+    this.ts.scaleY = this.ts.scaleX;
     this.ts.x =(Laya.stage.width - this.ts.width) /2;
     this.ts_proration = this.ts.width/this.ts.height;
     this.ts.x = 0;
-     this.ts.width = Laya.Browser.width;
+     
     // console.info(this.ts.tab)
     // for(var i in this.ts.tab._childs){
     //     this.ts.tab._childs[i].width = 160
@@ -69,8 +72,7 @@ function onTab(){
     // console.info("==",this.ts.width,Laya.Browser.width,Laya.stage.width,Laya.stage.height);
     this.ts.height = this.ts.width /this.ts_proration;
      this.ts.y = 881;//-105;
-     this.ts.bgColor = "red";
-     //this.ts.tabHeader.width =Laya.Browser.clientWidth;
+    //this.ts.tabHeader.width =Laya.Browser.clientWidth;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
     
