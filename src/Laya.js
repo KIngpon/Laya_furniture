@@ -1,7 +1,8 @@
 var WebGL = laya.webgl.WebGL;
 Laya.init(750, 1334, WebGL);
 Laya.stage.bgColor = "#fff";
-Laya.stage.scaleMode = "exactfit";
+Laya.stage.screenMode = Laya.Stage.SCREEN_NONE;
+Laya.stage.scaleMode =   Laya.Stage.SCALE_NOBORDER;//"exactfit";
 
 Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStart));
 
@@ -9,7 +10,7 @@ Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStar
 function onStart(){
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
-    this.start.start.x = this.start.start.width * -1;
+    this.start.start.x = this.start.start.width * -2;
     Laya.loader.load( ["res/atlas/home/0-tab.atlas",
 "res/atlas/home/1-floor.atlas",
 "res/atlas/home/2-wallpaper.atlas",
@@ -19,7 +20,7 @@ function onStart(){
 "res/atlas/home/top.atlas",
 "res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
     this.start.y = 0;
-    this.start.width = Laya.Browser.width;
+    this.start.x =(Laya.stage.width - this.start.width) /2;
     Laya.stage.addChild(this.start);
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
 }
@@ -55,14 +56,28 @@ function onMain(){
 
 function onTab(){
     this.ts = new ui.tabSelectUI();
-    this.ts.y = 885;//-105;
-    this.ts.width = Laya.Browser.width;
+    this.ts.x =(Laya.stage.width - this.ts.width) /2;
+    this.ts.width = 1200;
+    this.ts_proration = this.ts.width/this.ts.height;
+    
+    // this.ts.width = Laya.Browser.width;
+    // console.info(this.ts.tab)
+    // for(var i in this.ts.tab._childs){
+    //     this.ts.tab._childs[i].width = 160
+    //     console.info(this.ts.tab._childs[i].width)
+        
+    // }
+    // console.info("==",this.ts.width,Laya.Browser.width,Laya.stage.width,Laya.stage.height);
+    this.ts.height = this.ts.width /this.ts_proration;
+     this.ts.y = 881;//-105;
+     this.ts.bgColor = "red";
+     //this.ts.tabHeader.width =Laya.Browser.clientWidth;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
     
     this.ts.viewStack.on(Laya.Event.CLICK,this,onStackClick);
     this.ts.tab.selectHandler = new Laya.Handler(this,onSelect);        
-    console.info(this.ts.viewStack);
+    //console.info(this.ts.viewStack);
     for(var i in this.ts.viewStack._childs){
         var item = this.ts.viewStack._childs[i];
         for(var k in item._childs[0]._childs){
@@ -80,7 +95,7 @@ function onPreview(){
     this.preview.y =885-105;
     this.preview.stateNum = 1;
     this.preview.width = 82;
-    this.preview.height = 82;
+    this.preview.height = 82 ;
     Laya.stage.addChild(this.preview);
     this.preview.on(Laya.Event.CLICK,this,onPreviewClick);
 }

@@ -4,7 +4,7 @@
     "selectedBox":1,
     "selecteID":105,
     "referenceLines":null,
-    "props":{"y":0,"x":0,"width":750,"var":"tabSelect","sceneColor":"#000000","height":453},
+    "props":{"y":0,"x":0,"width":950,"var":"tabSelect","sceneColor":"#000000","height":453},
     "nodeParent":-1,
     "label":"View(tabSelect)",
     "isOpen":true,
@@ -16,16 +16,17 @@
         {
             "x":15,
             "type":"Tab",
-            "props":{"y":0,"x":0,"width":750,"var":"tab","selectedIndex":0,"height":56},
+            "props":{"y":0,"x":100,"width":750,"var":"tab","selectedIndex":0,"height":56},
             "nodeParent":1,
             "label":"Tab(tab)",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":26,
             "child":[
                 {
+                    "x":30,
                     "type":"Button",
                     "props":{"stateNum":2,"skin":"home/0-tab/btn_tap0.png","name":"item0"},
                     "nodeParent":26,
@@ -38,6 +39,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "props":{"x":150,"stateNum":2,"skin":"home/0-tab/btn_tap1.png","name":"item1"},
                     "nodeParent":26,
@@ -50,6 +52,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "props":{"x":300,"stateNum":2,"skin":"home/0-tab/btn_tap2.png","name":"item2"},
                     "nodeParent":26,
@@ -62,6 +65,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "props":{"x":450,"stateNum":2,"skin":"home/0-tab/btn_tap3.png","name":"item3"},
                     "nodeParent":26,
@@ -74,6 +78,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Button",
                     "props":{"x":600,"stateNum":2,"skin":"home/0-tab/btn_tap4.png","name":"item4"},
                     "nodeParent":26,
@@ -89,7 +94,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":56,"x":0,"var":"tabHeader","skin":"home/0-tab/conbg.png"},
+            "props":{"y":56,"x":100,"var":"tabHeader","skin":"home/0-tab/conbg.png"},
             "nodeParent":1,
             "label":"Image(tabHeader)",
             "isDirectory":false,
@@ -102,7 +107,7 @@
         {
             "x":15,
             "type":"ViewStack",
-            "props":{"y":56,"x":0,"var":"viewStack"},
+            "props":{"y":56,"x":100,"var":"viewStack","height":397},
             "nodeParent":1,
             "label":"ViewStack(viewStack)",
             "isOpen":false,
