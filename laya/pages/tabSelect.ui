@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":1,
-    "selecteID":26,
+    "selectedBox":26,
+    "selecteID":25,
     "referenceLines":null,
     "props":{"y":0,"x":0,"width":950,"var":"tabSelect","sceneColor":"#000000","height":468},
     "nodeParent":-1,
@@ -28,7 +28,7 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"x":0,"width":190,"stateNum":2,"skin":"home/0-tab/btn_tap0.png","name":"item0","height":71},
+                    "props":{"x":0,"width":191,"stateNum":2,"skin":"home/0-tab/btn_tap0.png","name":"item0","height":71},
                     "nodeParent":26,
                     "label":"Button(item0)",
                     "isDirectory":false,
@@ -41,7 +41,7 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"x":190,"width":190,"stateNum":2,"skin":"home/0-tab/btn_tap1.png","name":"item1","height":71},
+                    "props":{"x":190,"width":191,"stateNum":2,"skin":"home/0-tab/btn_tap1.png","name":"item1","height":71},
                     "nodeParent":26,
                     "label":"Button(item1)",
                     "isDirectory":false,
@@ -54,7 +54,7 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"x":380,"width":190,"stateNum":2,"skin":"home/0-tab/btn_tap2.png","name":"item2","height":71},
+                    "props":{"x":380,"width":191,"stateNum":2,"skin":"home/0-tab/btn_tap2.png","name":"item2","height":71},
                     "nodeParent":26,
                     "label":"Button(item2)",
                     "isDirectory":false,
@@ -67,7 +67,7 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"x":570,"width":190,"stateNum":2,"skin":"home/0-tab/btn_tap3.png","name":"item3","height":71},
+                    "props":{"x":569,"width":191,"stateNum":2,"skin":"home/0-tab/btn_tap3.png","name":"item3","height":71},
                     "nodeParent":26,
                     "label":"Button(item3)",
                     "isDirectory":false,
@@ -80,9 +80,10 @@
                 {
                     "x":30,
                     "type":"Button",
-                    "props":{"x":760,"width":190,"stateNum":2,"skin":"home/0-tab/btn_tap4.png","name":"item4","height":71},
+                    "props":{"x":759,"width":191,"stateNum":2,"skin":"home/0-tab/btn_tap4.png","name":"item4","height":71},
                     "nodeParent":26,
                     "label":"Button(item4)",
+                    "isOpen":false,
                     "isDirectory":false,
                     "isAniNode":true,
                     "hasChild":false,
