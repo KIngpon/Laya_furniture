@@ -1,10 +1,10 @@
 {
     "x":0,
     "type":"View",
-    "selectedBox":81,
-    "selecteID":93,
+    "selectedBox":1,
+    "selecteID":26,
     "referenceLines":null,
-    "props":{"y":0,"x":0,"width":950,"var":"tabSelect","sceneColor":"#000000","height":453},
+    "props":{"y":0,"x":0,"width":950,"var":"tabSelect","sceneColor":"#000000","height":468},
     "nodeParent":-1,
     "label":"View(tabSelect)",
     "isOpen":true,
@@ -102,7 +102,8 @@
             "hasChild":false,
             "compId":2,
             "child":[
-                ]
+                ],
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -110,14 +111,13 @@
             "props":{"y":71,"x":0,"width":950,"var":"viewStack","height":397},
             "nodeParent":1,
             "label":"ViewStack(viewStack)",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":105,
             "child":[
                 {
-                    "x":30,
                     "type":"Panel",
                     "props":{"width":950,"var":"floor","vScrollBarSkin":"comp/vscroll.png","name":"item0","height":394},
                     "nodeParent":105,
@@ -129,7 +129,6 @@
                     "compId":20,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":50,"x":150,"skin":"home/1-floor/big_floor_img1.png"},
                             "nodeParent":20,
@@ -142,7 +141,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":50,"x":408,"skin":"home/1-floor/big_floor_img2.png"},
                             "nodeParent":20,
@@ -155,7 +153,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":50,"x":665,"skin":"home/1-floor/big_floor_img3.png"},
                             "nodeParent":20,
@@ -168,7 +165,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":225,"x":150,"skin":"home/1-floor/big_floor_img4.png"},
                             "nodeParent":20,
@@ -181,7 +177,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":225,"x":408,"skin":"home/1-floor/big_floor_img5.png"},
                             "nodeParent":20,
@@ -194,7 +189,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":225,"x":665,"skin":"home/1-floor/big_floor_img6.png"},
                             "nodeParent":20,
@@ -207,7 +201,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":399,"x":150,"skin":"home/1-floor/big_floor_img7.png"},
                             "nodeParent":20,
@@ -220,7 +213,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":399,"x":408,"skin":"home/1-floor/big_floor_img8.png"},
                             "nodeParent":20,
@@ -234,7 +226,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Panel",
                     "props":{"width":950,"var":"wall","vScrollBarSkin":"comp/vscroll.png","name":"item1","height":394},
                     "nodeParent":105,
@@ -246,7 +237,6 @@
                     "compId":27,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":144,"skin":"home/2-wallpaper/big_wall_img1.png"},
                             "nodeParent":27,
@@ -259,7 +249,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":405,"skin":"home/2-wallpaper/big_wall_img2.png"},
                             "nodeParent":27,
@@ -272,7 +261,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":663,"skin":"home/2-wallpaper/big_wall_img3.png"},
                             "nodeParent":27,
@@ -285,7 +273,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":230,"x":144,"skin":"home/2-wallpaper/big_wall_img4.png"},
                             "nodeParent":27,
@@ -298,7 +285,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":230,"x":403,"skin":"home/2-wallpaper/big_wall_img5.png"},
                             "nodeParent":27,
@@ -311,7 +297,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":230,"x":661,"skin":"home/2-wallpaper/big_wall_img6.png"},
                             "nodeParent":27,
@@ -324,7 +309,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":391,"x":144,"skin":"home/2-wallpaper/big_wall_img7.png"},
                             "nodeParent":27,
@@ -338,7 +322,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Panel",
                     "props":{"width":950,"var":"sofa","vScrollBarSkin":"comp/vscroll.png","name":"item2","height":394},
                     "nodeParent":105,
@@ -350,7 +333,6 @@
                     "compId":43,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":56,"x":142,"skin":"home/3-sofa/big_sofa_img1.png"},
                             "nodeParent":43,
@@ -363,7 +345,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":60,"x":398,"skin":"home/3-sofa/big_sofa_img2.png"},
                             "nodeParent":43,
@@ -376,7 +357,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":659,"skin":"home/3-sofa/big_sofa_img3.png"},
                             "nodeParent":43,
@@ -389,7 +369,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":239,"x":142,"skin":"home/3-sofa/big_sofa_img4.png"},
                             "nodeParent":43,
@@ -402,7 +381,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":235,"x":398,"skin":"home/3-sofa/big_sofa_img5.png"},
                             "nodeParent":43,
@@ -415,7 +393,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":232,"x":659,"skin":"home/3-sofa/big_sofa_img6.png"},
                             "nodeParent":43,
@@ -428,7 +405,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":404,"x":144,"skin":"home/3-sofa/big_sofa_img7.png"},
                             "nodeParent":43,
@@ -441,7 +417,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":404,"x":398,"skin":"home/3-sofa/big_sofa_img8.png"},
                             "nodeParent":43,
@@ -454,7 +429,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":404,"x":659,"skin":"home/3-sofa/big_sofa_img9.png"},
                             "nodeParent":43,
@@ -468,7 +442,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Panel",
                     "props":{"width":950,"var":"cabinet","vScrollBarSkin":"comp/vscroll.png","name":"item3","height":394},
                     "nodeParent":105,
@@ -480,7 +453,6 @@
                     "compId":60,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":54,"x":145,"skin":"home/4-cabinet/big_sark_img1.png"},
                             "nodeParent":60,
@@ -493,7 +465,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":408,"skin":"home/4-cabinet/big_sark_img2.png"},
                             "nodeParent":60,
@@ -506,7 +477,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":54,"x":664,"skin":"home/4-cabinet/big_sark_img3.png"},
                             "nodeParent":60,
@@ -519,7 +489,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":227,"x":145,"skin":"home/4-cabinet/big_sark_img4.png"},
                             "nodeParent":60,
@@ -532,7 +501,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":227,"x":408,"skin":"home/4-cabinet/big_sark_img5.png"},
                             "nodeParent":60,
@@ -545,7 +513,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":227,"x":664,"skin":"home/4-cabinet/big_sark_img6.png"},
                             "nodeParent":60,
@@ -558,7 +525,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":397,"x":145,"skin":"home/4-cabinet/big_sark_img7.png"},
                             "nodeParent":60,
@@ -571,7 +537,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":397,"x":408,"skin":"home/4-cabinet/big_sark_img8.png"},
                             "nodeParent":60,
@@ -584,7 +549,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":397,"x":664,"skin":"home/4-cabinet/big_sark_img9.png"},
                             "nodeParent":60,
@@ -597,7 +561,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":570,"x":145,"skin":"home/4-cabinet/big_sark_img10.png"},
                             "nodeParent":60,
@@ -610,7 +573,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":570,"x":408,"skin":"home/4-cabinet/big_sark_img11.png"},
                             "nodeParent":60,
@@ -624,7 +586,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"Panel",
                     "props":{"width":950,"var":"window","vScrollBarSkin":"comp/vscroll.png","name":"item4","height":394},
                     "nodeParent":105,
@@ -636,7 +597,6 @@
                     "compId":81,
                     "child":[
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":51,"x":152,"skin":"home/5-window/big_window_img1.png"},
                             "nodeParent":81,
@@ -649,7 +609,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":46,"x":413,"skin":"home/5-window/big_window_img2.png"},
                             "nodeParent":81,
@@ -662,7 +621,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":46,"x":674,"skin":"home/5-window/big_window_img3.png"},
                             "nodeParent":81,
@@ -675,7 +633,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":220,"x":152,"skin":"home/5-window/big_window_img4.png"},
                             "nodeParent":81,
@@ -688,7 +645,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":220,"x":413,"skin":"home/5-window/big_window_img5.png"},
                             "nodeParent":81,
@@ -701,7 +657,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":220,"x":674,"skin":"home/5-window/big_window_img6.png"},
                             "nodeParent":81,
@@ -714,7 +669,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":386,"x":152,"skin":"home/5-window/big_window_img7.png"},
                             "nodeParent":81,
@@ -727,7 +681,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":386,"x":413,"skin":"home/5-window/big_window_img8.png"},
                             "nodeParent":81,
@@ -740,7 +693,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":386,"x":674,"skin":"home/5-window/big_window_img9.png"},
                             "nodeParent":81,
@@ -753,7 +705,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":536,"x":152,"skin":"home/5-window/big_window_img10.png"},
                             "nodeParent":81,
@@ -766,7 +717,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":536,"x":413,"skin":"home/5-window/big_window_img11.png"},
                             "nodeParent":81,
@@ -779,7 +729,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Image",
                             "props":{"y":536,"x":674,"skin":"home/5-window/big_window_img12.png"},
                             "nodeParent":81,
@@ -791,7 +740,8 @@
                             "child":[
                                 ]
                         }]
-                }]
+                }],
+            "$HIDDEN":false
         }],
     "animations":[
         {

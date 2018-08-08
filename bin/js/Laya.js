@@ -71,7 +71,8 @@ function onTab(){
     // }
     // console.info("==",this.ts.width,Laya.Browser.width,Laya.stage.width,Laya.stage.height);
     this.ts.height = this.ts.width /this.ts_proration;
-     this.ts.y = 881;//-105;
+     this.ts.y = 945;
+     console.info(Laya.Browser.clientHeight, this.ts.height)
     //this.ts.tabHeader.width =Laya.Browser.clientWidth;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
@@ -93,7 +94,7 @@ function onPreview(){
     this.preview = new Laya.Button();
     this.preview.skin = "home/top/photo_icon.png";
     this.preview.x =  Laya.stage.width - 105;
-    this.preview.y =885-105;
+    this.preview.y =945-105;
     this.preview.stateNum = 1;
     this.preview.width = 82;
     this.preview.height = 82 ;
