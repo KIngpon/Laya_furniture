@@ -57,10 +57,9 @@ function onMain(){
 function onTab(){
     this.ts = new ui.tabSelectUI();
     this.ts.x =(Laya.stage.width - this.ts.width) /2;
-    this.ts.width = 1200;
     this.ts_proration = this.ts.width/this.ts.height;
-    
-    // this.ts.width = Laya.Browser.width;
+    this.ts.x = 0;
+     this.ts.width = Laya.Browser.width;
     // console.info(this.ts.tab)
     // for(var i in this.ts.tab._childs){
     //     this.ts.tab._childs[i].width = 160
