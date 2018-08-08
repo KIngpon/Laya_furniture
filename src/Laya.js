@@ -2,7 +2,7 @@ var WebGL = laya.webgl.WebGL;
 Laya.init(750, 1334, WebGL);
 Laya.stage.bgColor = "#fff";
 Laya.stage.screenMode = Laya.Stage.SCREEN_NONE;
-Laya.stage.scaleMode =   Laya.Stage.SCALE_NOBORDER;//"exactfit";
+Laya.stage.scaleMode =   Laya.Stage.SCALE_FIXED_HEIGHT;//"exactfit";
 
 Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStart));
 
