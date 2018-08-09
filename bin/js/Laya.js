@@ -46,7 +46,9 @@ function onStartClick(){
 function onMain(){
     this.main = new ui.mainPageUI();
     this.main.y = 0;
-    this.main.width = Laya.Browser.width;
+    this.start.x = 0;
+    console.info(this.main.width , Laya.Browser.width);
+    this.main.width = Laya.Browser.width;    
     this.main.wall.loadImage("home/top/wall_bg.png",0,0,this.main.wall.width,this.main.wall.height);
     this.main.floor.loadImage("home/top/floot_bg.png",0,0,this.main.floor.width,this.main.floor.height);
     Laya.stage.addChild(this.main);    
@@ -63,16 +65,11 @@ function onTab(){
     this.ts_proration = this.ts.width/this.ts.height;
     this.ts.x = 0;
      
-    // console.info(this.ts.tab)
-    // for(var i in this.ts.tab._childs){
-    //     this.ts.tab._childs[i].width = 160
-    //     console.info(this.ts.tab._childs[i].width)
-        
-    // }
-    // console.info("==",this.ts.width,Laya.Browser.width,Laya.stage.width,Laya.stage.height);
+
+     console.info("==",this.ts.width,Laya.Browser.width,this.ts.height);
     this.ts.height = this.ts.width /this.ts_proration;
-     this.ts.y = 933;
-     console.info(Laya.Browser.clientHeight, this.ts.height)
+     this.ts.y = Laya.stage.height - this.ts.height * this.ts.scaleY; //933
+     //console.info(Laya.stage.heightLaya.Browser.clientHeight, this.ts.height)
     //this.ts.tabHeader.width =Laya.Browser.clientWidth;
     Laya.stage.addChild(ts);
     // console.info(this.ts.width ,Laya.Browser.width,Laya.Browser.clientWidth,Laya.stage.scaleX)
