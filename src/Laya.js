@@ -10,7 +10,7 @@ Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStar
 function onStart(){
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
-    this.start.start.x = this.start.start.width * -2;
+    this.start.start.x = this.start.start.width * -999;
     Laya.loader.load( ["res/atlas/home/0-tab.atlas",
 "res/atlas/home/1-floor.atlas",
 "res/atlas/home/2-wallpaper.atlas",
@@ -216,10 +216,16 @@ function onClickMain(e){
 
 function onScale(e){
     console.info(e)
-    if(this.scale_info == null){
-        this.scale_info = e.nativeEvent.changedTouches[0];
+    if(typeof e.nativeEvent.changedTouches != "undefined"){
+        var point = e.nativeEvent.changedTouches[0];
     } else {
-        var now_info = e.nativeEvent.changedTouches[0];
+        var point = e.nativeEvent;
+    }
+    if(this.scale_info == null){
+
+        this.scale_info = point;
+    } else {
+        var now_info = point;
         var scale = now_info.clientY - this.scale_info.clientY;
         var limit = 0.02;
         //正小 负大

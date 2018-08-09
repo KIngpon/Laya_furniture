@@ -10,7 +10,7 @@ Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStar
 function onStart(){
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
-    this.start.start.x = this.start.start.width * -2;
+    this.start.start.x = this.start.start.width * -999;
     Laya.loader.load( ["res/atlas/home/0-tab.atlas",
 "res/atlas/home/1-floor.atlas",
 "res/atlas/home/2-wallpaper.atlas",
@@ -51,6 +51,7 @@ function onMain(){
     this.main.width = Laya.Browser.width;    
     this.main.wall.loadImage("home/top/wall_bg.png",0,0,this.main.wall.width,this.main.wall.height);
     this.main.floor.loadImage("home/top/floot_bg.png",0,0,this.main.floor.width,this.main.floor.height);
+     this.main.home.on(Laya.Event.CLICK,this,onClickMain);
     Laya.stage.addChild(this.main);    
 }
 
@@ -101,10 +102,11 @@ function onPreview(){
 
 function onPreviewClick(){
     console.info("preview")
+     e.stopPropagation();
 }
 
-function onStackClick(d){
-    console.info(d)
+function onStackClick(e){
+     e.stopPropagation();
 }
 
 function onImageClick(f){
@@ -140,10 +142,13 @@ function onSelect(index){
 }
 
 function insertSprite(skin){
+    clearIco(null);
     var s = new Laya.Sprite();
     
     s.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
-        console.info(d)
+        //console.info(d)
+        s.pivotX = s.width/2;
+        s.pivotY = s.height/2;
         s.pos(this.main.wall.width/2 - d.width/2 ,this.main.wall.height/2 - d.height/2);
         // Laya.stage.addChild(s);  
         var line = new Laya.Sprite();             
@@ -175,6 +180,19 @@ function insertSprite(skin){
     
 }
 
+function clearIco(e){
+    for(var i in this.main.home._childs){
+        var child = this.main.home._childs[i];
+        for(var ii in child._childs){
+            child._childs[ii].visible = false;
+        }
+    }
+    if(e != null){
+     e.stopPropagation();
+    }
+}
+
+
 function onDelete(e){
     console.info(e)
     e.target.parent.destroy();
@@ -182,39 +200,66 @@ function onDelete(e){
 }
 
 function onFlipping(e){
-    e.target.parent.scaleX =  e.target.parent.scaleX==1?-1:1;
+    e.target.parent.scaleX *= -1;
+    e.stopPropagation();
+}
+
+
+function onClickMain(e){
+    console.info(e)
+    ocm = e;
+    if(e.target && e.target.parent && e.target.parent instanceof mainPageUI){
+        clearIco();
+    }
     e.stopPropagation();
 }
 
 function onScale(e){
     console.info(e)
-    if(this.scale_info == null){
-        this.scale_info = e.nativeEvent.changedTouches[0];
+    if(typeof e.nativeEvent.changedTouches != "undefined"){
+        var point = e.nativeEvent.changedTouches[0];
     } else {
-        var now_info = e.nativeEvent.changedTouches[0];
+        var point = e.nativeEvent;
+    }
+    if(this.scale_info == null){
+
+        this.scale_info = point;
+    } else {
+        var now_info = point;
         var scale = now_info.clientY - this.scale_info.clientY;
+        var limit = 0.02;
         //正小 负大
         if(scale == 0){
             //判断左还右移动
             var scale =  this.scale_info.clientX -now_info.clientX;
-            if( e.target.parent.scaleX < 0){
-                scale *= -1;
-            }
+           
         }
-        if(scale < 0){
-            e.target.parent.scaleX += 0.2;
-            e.target.parent.scaleY += 0.2;
+         if( e.target.parent.scaleX < 0){
+                 scale *= -1;
+                //  limit = -0.02;
+
+                if(scale > 0){
+                            e.target.parent.scaleX -= limit;
+                            e.target.parent.scaleY += 0.02;
+                        } 
+                        else if(scale <0 ){
+                            e.target.parent.scaleX += limit;
+                            e.target.parent.scaleY -= 0.02;
+                        }
+
+            }
+            else if(e.target.parent.scaleX > 0){
+         if(scale < 0){
+            e.target.parent.scaleX += limit;
+            e.target.parent.scaleY += 0.02;
         } 
         else if(scale >0 ){
-            e.target.parent.scaleX -= 0.2;
-            e.target.parent.scaleY -= 0.2;
+            e.target.parent.scaleX -= limit;
+            e.target.parent.scaleY -= 0.02;
         }
-        if(e.target.parent.scaleX< 0.3){
-            e.target.parent.scaleX = e.target.parent.scaleY = 0.3;
-        }
-        else if(e.target.parent.scaleX> 5){
-            e.target.parent.scaleX = e.target.parent.scaleY = 5;
-        }
+            }
+        console.info(scale)
+       
     }
     e.stopPropagation();
 }
@@ -242,4 +287,5 @@ function showDragRegion()
         console.info(e)
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
 		e.target.startDrag(null, true, 100);
+        e.stopPropagation();
 	}
