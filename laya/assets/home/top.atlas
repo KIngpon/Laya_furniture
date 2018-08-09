@@ -1,5 +1,39 @@
 {
     "frames": {
+        "delete.png": {
+            "frame": {
+                "h": 40,
+                "idx": 0,
+                "w": 40,
+                "x": 431,
+                "y": 469
+            },
+            "sourceSize": {
+                "h": 40,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "flipping.png": {
+            "frame": {
+                "h": 40,
+                "idx": 0,
+                "w": 40,
+                "x": 472,
+                "y": 469
+            },
+            "sourceSize": {
+                "h": 40,
+                "w": 40
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
         "img1.png": {
             "frame": {
                 "h": 69,
@@ -113,6 +147,23 @@
             "sourceSize": {
                 "h": 82,
                 "w": 82
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "scale.png": {
+            "frame": {
+                "h": 40,
+                "idx": 0,
+                "w": 40,
+                "x": 513,
+                "y": 469
+            },
+            "sourceSize": {
+                "h": 40,
+                "w": 40
             },
             "spriteSourceSize": {
                 "x": 0,

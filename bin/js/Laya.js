@@ -145,12 +145,83 @@ function insertSprite(skin){
     s.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
         console.info(d)
         s.pos(this.main.wall.width/2 - d.width/2 ,this.main.wall.height/2 - d.height/2);
-        // Laya.stage.addChild(s);
+        // Laya.stage.addChild(s);  
+        var line = new Laya.Sprite();             
+        line.graphics.drawLine(-10,-10,s.width+10,-10,"#c0c0c0",1);
+        line.graphics.drawLine(s.width+10,-10,s.width+10,s.height+10,"#c0c0c0",1);
+        line.graphics.drawLine(s.width+10,s.height+10,-10,s.height+10,"#c0c0c0",1);
+        line.graphics.drawLine(-10,s.height+10,-10,-10,"#c0c0c0",1);
+        s.addChild(line);
+        var del = new Laya.Image();
+        del.loadImage("home/top/delete.png",0,0,40,40);
+        del.pos(-30,-30);
+        del.on(Laya.Event.MOUSE_DOWN,this,onDelete);
+        s.addChild(del);
+        var scale = new Laya.Image();
+        scale.loadImage("home/top/scale.png",0,0,40,40);
+        scale.pos(s.width-10,-30);
+        scale.on(Laya.Event.MOUSE_MOVE,this,onScale);
+        scale.on(Laya.Event.MOUSE_DOWN,this,onClickStop);
+        s.addChild(scale);
+        var flipping = new Laya.Image();
+        flipping.loadImage("home/top/flipping.png",0,0,40,40);
+        flipping.pos(-30,s.height-10);
+        flipping.on(Laya.Event.MOUSE_DOWN,this,onFlipping);
+        s.addChild(flipping);
         this.main.home.addChild(s);
         s.size(s.width,s.height);
         s.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
     }))
     
+}
+
+function onDelete(e){
+    console.info(e)
+    e.target.parent.destroy();
+    e.stopPropagation();
+}
+
+function onFlipping(e){
+    e.target.parent.scaleX =  e.target.parent.scaleX==1?-1:1;
+    e.stopPropagation();
+}
+
+function onScale(e){
+    console.info(e)
+    if(this.scale_info == null){
+        this.scale_info = e.nativeEvent.changedTouches[0];
+    } else {
+        var now_info = e.nativeEvent.changedTouches[0];
+        var scale = now_info.clientY - this.scale_info.clientY;
+        //正小 负大
+        if(scale == 0){
+            //判断左还右移动
+            var scale =  this.scale_info.clientX -now_info.clientX;
+            if( e.target.parent.scaleX < 0){
+                scale *= -1;
+            }
+        }
+        if(scale < 0){
+            e.target.parent.scaleX += 0.2;
+            e.target.parent.scaleY += 0.2;
+        } 
+        else if(scale >0 ){
+            e.target.parent.scaleX -= 0.2;
+            e.target.parent.scaleY -= 0.2;
+        }
+        if(e.target.parent.scaleX< 0.3){
+            e.target.parent.scaleX = e.target.parent.scaleY = 0.3;
+        }
+        else if(e.target.parent.scaleX> 5){
+            e.target.parent.scaleX = e.target.parent.scaleY = 5;
+        }
+    }
+    e.stopPropagation();
+}
+
+function onClickStop(e){
+    this.scale_info = null;
+    e.stopPropagation();
 }
 
 /**
