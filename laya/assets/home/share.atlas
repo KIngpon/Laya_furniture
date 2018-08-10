@@ -17,6 +17,23 @@
                 "y": 0
             }
         },
+        "close.png": {
+            "frame": {
+                "h": 63,
+                "idx": 0,
+                "w": 63,
+                "x": 0,
+                "y": 116
+            },
+            "sourceSize": {
+                "h": 63,
+                "w": 63
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0
+            }
+        },
         "share.png": {
             "frame": {
                 "h": 57,

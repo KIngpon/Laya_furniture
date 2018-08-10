@@ -34,25 +34,25 @@ P 7E990267 vscroll.png
 P E466EB1C vslider$bar.png
 P 2BFF7046 vslider.png
 D home
-R DCB96C33 .rec
+R 80D5D5C7 .rec
 R 2755F0D5 0-home.atlas
 R 0438B6E6 0-home.png
 R 48A98493 0-tab.atlas
 P 50C2F2DA 0-tab.png
-R EFA117B9 1-floor.atlas
-P 289F42F3 1-floor.png
-R 4A546030 2-wallpaper.atlas
-P A66F3DBA 2-wallpaper.png
+R 1F407D80 1-floor.atlas
+P 5E179217 1-floor.png
+R 344C9880 2-wallpaper.atlas
+P 3F154228 2-wallpaper.png
 R BB76383C 3-sofa.atlas
 R 2CAD25BB 3-sofa.png
-R 29430D8B 4-cabinet.atlas
-R 4DFC0C79 4-cabinet.png
+R 0A9BA285 4-cabinet.atlas
+R 92ECF819 4-cabinet.png
 R A0312170 5-window.atlas
 R 493AFB22 5-window.png
 R A7DD9CED scrollbar.atlas
 P 52C90362 scrollbar.png
-R 95E393A9 share.atlas
-P 941926F6 share.png
+R 207A47D3 share.atlas
+P E191E774 share.png
 R 17463407 top.atlas
 R E26BA130 top.png
 D home/0-home
@@ -181,11 +181,15 @@ P 12E53846 big_window_img6.png
 P F119CCD1 big_window_img7.png
 P C10533DD big_window_img8.png
 P 2FBEB867 big_window_img9.png
+D home/music
+R 924854F2 bg.mp3
 D home/scrollbar
 P FF270378 scroll_bar.png
 P 5AA0F592 scroll_bg.png
 D home/share
 P C38143A3 again.png
+P 488E48C7 close.png
+R EB7DC962 img.jpg
 P 50C0684E share.png
 D home/top
 P A79D4812 delete.png

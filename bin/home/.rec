@@ -1,5 +1,5 @@
 D .
-R 7882D7FE .rec
+R DCB96C33 .rec
 R 2755F0D5 0-home.atlas
 R 438B6E6 0-home.png
 R 48A98493 0-tab.atlas
@@ -42,37 +42,43 @@ P 32F48514 sofa_tab.png
 P 619E7A0F wall_tab.png
 P 247CC2D0 window_tab.png
 D 1-floor
-R 9D3EED5A 750_floor_img1.png
-R A70294C0 750_floor_img2.png
-R 3384BC42 750_floor_img3.png
-R EDC9E8F2 750_floor_img4.png
-R CE8DD087 750_floor_img5.png
-R FAA561EE 750_floor_img6.png
-R C3C83736 750_floor_img7.png
-R CBD4BF87 750_floor_img8.png
-P E7D2CAAA big_floor_img1.png
-P 67A17BA9 big_floor_img2.png
-P A62339D0 big_floor_img3.png
-P 004E4F7A big_floor_img4.png
-P C64D5A35 big_floor_img5.png
-P CD56696C big_floor_img6.png
-P B9115B79 big_floor_img7.png
-P DCC5DB4A big_floor_img8.png
+R 66E445FA 750_floor_img1.png
+R 2FB484E9 750_floor_img10.png
+R 42D1C078 750_floor_img2.png
+R A4D75556 750_floor_img3.png
+R AB908684 750_floor_img4.png
+R 154F6DC4 750_floor_img5.png
+R 5FCEB1A2 750_floor_img6.png
+R 49C16A4F 750_floor_img7.png
+R 6F668E5C 750_floor_img8.png
+R 0118A3A4 750_floor_img9.png
+P D6F37EB5 big_floor_img1.png
+P 4D4C638C big_floor_img10.png
+P DDE5714B big_floor_img2.png
+P 15FB69CD big_floor_img3.png
+P 85198F0F big_floor_img4.png
+P CC33478E big_floor_img5.png
+P F1C79793 big_floor_img6.png
+P C0983B3F big_floor_img7.png
+P CC00B57F big_floor_img8.png
+P 4BACDB42 big_floor_img9.png
 D 2-wallpaper
-R B4419AAB 750_wall_img1.png
-R 46691075 750_wall_img2.png
-R 0ADD4737 750_wall_img3.png
-R 2D563E17 750_wall_img4.png
-R 5A9EB1E8 750_wall_img5.png
-R DC6DC9EA 750_wall_img6.png
-R 9AB4B929 750_wall_img7.png
-P 530798AA big_wall_img1.png
-P 7534814C big_wall_img2.png
-P CA7446DE big_wall_img3.png
-P 459861FE big_wall_img4.png
-P B45CB602 big_wall_img5.png
-P 817CD98E big_wall_img6.png
-P F34411E5 big_wall_img7.png
+R 46691075 750_wall_img1.png
+R 9AB4B929 750_wall_img2.png
+R 36521D63 750_wall_img3.png
+R A586F65D 750_wall_img4.png
+R 14C23A18 750_wall_img5.png
+R E35D11BE 750_wall_img6.png
+R C3384B36 750_wall_img7.png
+R 1EF993CB 750_wall_img8.png
+P 0A00E167 big_wall_img1.png
+P D5240BE0 big_wall_img2.png
+P C6BCF7D1 big_wall_img3.png
+P E4222667 big_wall_img4.png
+P FD8D87BE big_wall_img5.png
+P ED910250 big_wall_img6.png
+P A18A81FE big_wall_img7.png
+P 8571B07A big_wall_img8.png
 D 3-sofa
 P 443ADE3C 750_sofa_img1.png
 R 5E9E2896 750_sofa_img2.png
@@ -100,7 +106,7 @@ P D0670016 750_sark_img2.png
 P 00FD904E 750_sark_img3.png
 P FBDE14F6 750_sark_img4.png
 P BE5427E2 750_sark_img5.png
-P F7BDB895 750_sark_img6.png
+P B9D35C93 750_sark_img6.png
 P 06DE7354 750_sark_img7.png
 P FB8C63B1 750_sark_img8.png
 P 94EEC867 750_sark_img9.png
@@ -111,7 +117,7 @@ P FA49CABC big_sark_img2.png
 P 055D2DF4 big_sark_img3.png
 P E38395B8 big_sark_img4.png
 P FB6F665A big_sark_img5.png
-P 0CC0A20B big_sark_img6.png
+P 5DED9374 big_sark_img6.png
 P 6FE82C41 big_sark_img7.png
 P 43D48A9A big_sark_img8.png
 P 035B300D big_sark_img9.png
@@ -140,11 +146,15 @@ P 12E53846 big_window_img6.png
 P F119CCD1 big_window_img7.png
 P C10533DD big_window_img8.png
 P 2FBEB867 big_window_img9.png
+D music
+R 924854F2 bg.mp3
 D scrollbar
 P FF270378 scroll_bar.png
 P 5AA0F592 scroll_bg.png
 D share
 P C38143A3 again.png
+P 488E48C7 close.png
+R EB7DC962 img.jpg
 P 50C0684E share.png
 D top
 P A79D4812 delete.png
