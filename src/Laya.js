@@ -8,6 +8,7 @@ Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStar
 
 
 function onStart(){
+    this.scale = false;
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
     this.start.start.x = this.start.start.width * -999;
@@ -180,8 +181,8 @@ function insertSprite(skin){
         var scale = new Laya.Image();
         scale.loadImage("home/top/scale.png",0,0,40,40);
         scale.pos(s.width-10,-30);
-        scale.on(Laya.Event.MOUSE_MOVE,this,onScale);
-        scale.on(Laya.Event.MOUSE_DOWN,this,onClickStop);
+        scale.on(Laya.Event.MOUSE_DOWN,this,onStartScale);
+        scale.on(Laya.Event.MOUSE_UP,this,onStopScale);
         s.addChild(scale);
         var flipping = new Laya.Image();
         flipping.loadImage("home/top/flipping.png",0,0,40,40);
@@ -191,6 +192,7 @@ function insertSprite(skin){
         this.main.home.addChild(s);
         s.size(s.width,s.height);
         s.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
+        s.on(Laya.Event.MOUSE_MOVE,this,onScale);
         s.on(Laya.Event.MOUSE_UP,this,onStopDrag);
     }))
     
@@ -230,8 +232,26 @@ function onClickMain(e){
     e.stopPropagation();
 }
 
-function onScale(e){
+function onStartScale(e){
+    console.info(e, e.target.parent.scale)
+    e.target.parent.scaleX  *=1.12;
+    e.target.parent.scaleY  *=1.12;
+    this.scale = true;
+    e.stopPropagation();
+}
+
+function onStopScale(e){
     console.info(e)
+    if(this.scale){
+        this.scale = false;
+    }
+    e.stopPropagation();
+}
+
+function onScale(e){
+    if(!this.scale){
+        return;
+    }
     if(typeof e.nativeEvent.changedTouches != "undefined"){
         var point = e.nativeEvent.changedTouches[0];
     } else {
@@ -277,7 +297,6 @@ function onScale(e){
         console.info(scale)
        
     }
-    e.stopPropagation();
 }
 
 function onClickStop(e){
@@ -301,6 +320,11 @@ function showDragRegion()
 	function onStartDrag(e)
 	{
         console.info(e)
+        if(this.scale){
+            e.stopPropagation();
+            return;
+        }
+        
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         clearIco();
         for(var i in e.target._childs){
@@ -315,6 +339,10 @@ function showDragRegion()
     function onStopDrag(e)
 	{
         console.info(e)
+        if(this.scale){
+            onStopScale(e);
+            return;
+        }
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         Laya.Tween.to(e.target,{scaleX:e.target.scaleX/1.05,scaleY:e.target.scaleY/1.05},400,Laya.Ease.elasticInOut,null,0);
         e.stopPropagation();

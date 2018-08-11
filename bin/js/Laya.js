@@ -23,6 +23,8 @@ function onStart(){
     this.start.x =(Laya.stage.width - this.start.width) /2;
     Laya.stage.addChild(this.start);
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
+    Laya.SoundManager.playMusic("home/music/bg.mp3",-1);
+    Laya.SoundManager.setMusicVolume(0.1);
 }
 
 function onProgress(d){
@@ -92,7 +94,7 @@ function onPreview(){
     this.preview = new Laya.Button();
     this.preview.skin = "home/top/photo_icon.png";
     this.preview.x =  Laya.stage.width - 105;
-    this.preview.y =933-105;
+    this.preview.y =Laya.stage.height - this.ts.height * this.ts.scaleY -105;
     this.preview.stateNum = 1;
     this.preview.width = 82;
     this.preview.height = 82 ;
@@ -100,8 +102,21 @@ function onPreview(){
     this.preview.on(Laya.Event.CLICK,this,onPreviewClick);
 }
 
-function onPreviewClick(){
+function onPreviewClick(e){
     console.info("preview")
+    // var canvas = document.getElementById("layaCanvas");
+    // var d = canvas.toDataURL();
+    var hc = self.drawToCanvas(Laya.stage.width,Laya.stage.height,0,0);
+    var canvas = hc.getCanvas();
+    var image = new Image();
+    image.src = canvas.toDataUrl();
+    image.width = Laya.Browser.clientWidth;
+    image.height = Laya.Browser.clientHeight;
+    image.style.position = "fixed"
+    image.style.left = 0;
+    image.style.top = 0;
+    image.style.zIndex = 18;
+    document.getElementsByTagName("body")[0].appendChild(image);
      e.stopPropagation();
 }
 
@@ -176,6 +191,7 @@ function insertSprite(skin){
         this.main.home.addChild(s);
         s.size(s.width,s.height);
         s.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
+        s.on(Laya.Event.MOUSE_UP,this,onStopDrag);
     }))
     
 }
@@ -286,6 +302,20 @@ function showDragRegion()
 	{
         console.info(e)
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
+        clearIco();
+        for(var i in e.target._childs){
+           e.target._childs[i].visible = true;
+        }
+        //dd = e.target;
+        Laya.Tween.to(e.target,{scaleX:e.target.scaleX*1.05,scaleY:e.target.scaleY*1.05},400,Laya.Ease.elasticInOut,null,0);
 		e.target.startDrag(null, true, 100);
+        e.stopPropagation();
+	}
+
+    function onStopDrag(e)
+	{
+        console.info(e)
+		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
+        Laya.Tween.to(e.target,{scaleX:e.target.scaleX/1.05,scaleY:e.target.scaleY/1.05},400,Laya.Ease.elasticInOut,null,0);
         e.stopPropagation();
 	}
