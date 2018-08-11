@@ -115,12 +115,12 @@ function onPreview(){
 
 function onPreviewClick(e){
     console.info("preview")
-    // var canvas = document.getElementById("layaCanvas");
+    var canvas = document.getElementById("layaCanvas");
     // var d = canvas.toDataURL();
-    var hc = self.drawToCanvas(Laya.stage.width,Laya.stage.height,0,0);
-    var canvas = hc.getCanvas();
+    // var hc = self.drawToCanvas(Laya.stage.width,Laya.stage.height,0,0);
+    // var canvas = hc.getCanvas();
     var image = new Image();
-    image.src = canvas.toDataUrl();
+    image.src = canvas.toDataURL();
     image.width = Laya.Browser.clientWidth;
     image.height = Laya.Browser.clientHeight;
     image.style.position = "fixed"
@@ -128,7 +128,13 @@ function onPreviewClick(e){
     image.style.top = 0;
     image.style.zIndex = 18;
     document.getElementsByTagName("body")[0].appendChild(image);
+    showFooter();
      e.stopPropagation();
+}
+
+
+function showFooter(){
+    
 }
 
 function onStackClick(e){
@@ -222,7 +228,7 @@ function _drawLineBox(s){
         line.graphics.drawLine(s.width*s.scaleX+10,-10,s.width*s.scaleX+10,s.height*s.scaleY+10,"#efefef",1);
         line.graphics.drawLine(s.width*s.scaleX+10,s.height*s.scaleY+10,-10,s.height*s.scaleY+10,"#efefef",1);
         line.graphics.drawLine(-10,s.height*s.scaleY+10,-10,-10,"#efefef",1);
-        
+        line.alpha = 0.6;
         return line;
 }
 
@@ -248,7 +254,7 @@ function onDelete(e){
 }
 
 function onFlipping(e){
-    e.target.parent.scaleX *= -1;
+    e.target.parent._childs[0].scaleX *= -1;
     e.stopPropagation();
 }
 
@@ -265,7 +271,7 @@ function onClickMain(e){
 function onStartScale(e){
     if(this.scale == null){
         console.info(e, e.target.parent.scaleX)
-        var percent = 140/(e.target.parent._childs[0].width*e.target.parent.scaleX)
+        var percent = 100/(e.target.parent._childs[0].width*e.target.parent.scaleX)
         console.info("====",percent)
         e.target.parent.scaleX  *=(1+percent);
         e.target.parent.scaleY  *=(1+percent);
@@ -289,7 +295,7 @@ function onScale(e){
     if(this.scale == null ){
         return;
     }
-    console.info(e)
+    // console.info(e)
     if(typeof e.nativeEvent.changedTouches != "undefined"){
         var point = e.nativeEvent.changedTouches[0];
     } else {
@@ -392,4 +398,21 @@ function showDragRegion()
             onStopScale(e);
             return;
         }
+    }
+
+
+    function showFooter(){
+document.getElementById("footer").style.display = 'block';
+    }
+
+function hideFooter(){
+        document.getElementById("footer").style.display = 'none';
+    }
+
+    function showOpen(){
+document.getElementById("open").style.display = 'block';
+    }
+
+    function hideOpen(){
+        document.getElementById("open").style.display = 'none';
     }

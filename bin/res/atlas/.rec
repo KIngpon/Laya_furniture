@@ -34,7 +34,7 @@ P 7E990267 vscroll.png
 P E466EB1C vslider$bar.png
 P 2BFF7046 vslider.png
 D home
-R 80D5D5C7 .rec
+R 1DADA338 .rec
 R 2755F0D5 0-home.atlas
 R 0438B6E6 0-home.png
 R 48A98493 0-tab.atlas
@@ -49,6 +49,8 @@ R 0A9BA285 4-cabinet.atlas
 R 92ECF819 4-cabinet.png
 R A0312170 5-window.atlas
 R 493AFB22 5-window.png
+R CF788777 html.atlas
+P 6441B496 html.png
 R A7DD9CED scrollbar.atlas
 P 52C90362 scrollbar.png
 R 207A47D3 share.atlas
@@ -181,6 +183,11 @@ P 12E53846 big_window_img6.png
 P F119CCD1 big_window_img7.png
 P C10533DD big_window_img8.png
 P 2FBEB867 big_window_img9.png
+D home/html
+P 70843A6F again.png
+P 488E48C7 close.png
+R EB7DC962 img.jpg
+P CBF75D0B share.png
 D home/music
 R 924854F2 bg.mp3
 D home/scrollbar

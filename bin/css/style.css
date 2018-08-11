@@ -1,0 +1,44 @@
+#footer{
+    position: fixed;
+    z-index: 999;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        background-color: #fff;
+        padding-top:10px;
+        display: none;
+}
+#footer .text{
+    padding-left: 20px;color: #333;font-size: 12px;
+}
+#footer .link{
+    width: 100%;text-align: center;
+    padding: 10px 0;
+}
+#footer img{
+    width: 70%;
+    
+}
+
+#open{
+    position: fixed;
+    text-align: center;
+    z-index: 9999;
+    width:100%;height:100%;
+    display: none;
+}
+#open .bg{
+    background: #fff;
+    opacity: 0.5;
+    width:100%;height:100%;
+}
+#open .main{
+width: 100%;
+position: fixed;
+top:5%;
+left:0;
+display: block;
+}
+#open .main img{
+    width: 90%;
+}

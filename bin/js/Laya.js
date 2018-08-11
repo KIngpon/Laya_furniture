@@ -8,6 +8,14 @@ Laya.loader.load(["res/atlas/home/0-home.atlas"],Laya.Handler.create(this,onStar
 
 
 function onStart(){
+    /**
+     * 缩放的对象
+     */
+    this.scale = null;
+    /**
+     * 开始点击的点
+     */
+    this.start_point_info = null;
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
     this.start.start.x = this.start.start.width * -999;
@@ -24,7 +32,9 @@ function onStart(){
     Laya.stage.addChild(this.start);
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
     Laya.SoundManager.playMusic("home/music/bg.mp3",-1);
-    Laya.SoundManager.setMusicVolume(0.1);
+    Laya.SoundManager.setMusicVolume(0.1);   
+    Laya.stage.on(Laya.Event.MOUSE_MOVE,this,onScale);
+    Laya.stage.on(Laya.Event.MOUSE_UP,this,onStopScale);
 }
 
 function onProgress(d){
@@ -53,8 +63,9 @@ function onMain(){
     this.main.width = Laya.Browser.width;    
     this.main.wall.loadImage("home/top/wall_bg.png",0,0,this.main.wall.width,this.main.wall.height);
     this.main.floor.loadImage("home/top/floot_bg.png",0,0,this.main.floor.width,this.main.floor.height);
-     this.main.home.on(Laya.Event.CLICK,this,onClickMain);
-    Laya.stage.addChild(this.main);    
+    this.main.home.on(Laya.Event.CLICK,this,onClickMain);
+    Laya.stage.addChild(this.main);   
+     mainhome = this.main.home; 
 }
 
 
@@ -117,7 +128,13 @@ function onPreviewClick(e){
     image.style.top = 0;
     image.style.zIndex = 18;
     document.getElementsByTagName("body")[0].appendChild(image);
+    showButton();
      e.stopPropagation();
+}
+
+
+function showFooter(){
+    
 }
 
 function onStackClick(e){
@@ -159,48 +176,69 @@ function onSelect(index){
 function insertSprite(skin){
     clearIco(null);
     var s = new Laya.Sprite();
+
+    var image = new Laya.Image();
     
-    s.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
+    image.loadImage(skin,0,0,0,0,Laya.Handler.create(this,function(d){
         //console.info(d)
-        s.pivotX = s.width/2;
-        s.pivotY = s.height/2;
+        image.pivotX = image.width/2;
+        image.pivotY = image.height/2;
         s.pos(this.main.wall.width/2 - d.width/2 ,this.main.wall.height/2 - d.height/2);
+        image.size(image.width,image.height);
+        s.addChildAt(image,0);
         // Laya.stage.addChild(s);  
-        var line = new Laya.Sprite();             
-        line.graphics.drawLine(-10,-10,s.width+10,-10,"#c0c0c0",1);
-        line.graphics.drawLine(s.width+10,-10,s.width+10,s.height+10,"#c0c0c0",1);
-        line.graphics.drawLine(s.width+10,s.height+10,-10,s.height+10,"#c0c0c0",1);
-        line.graphics.drawLine(-10,s.height+10,-10,-10,"#c0c0c0",1);
-        s.addChild(line);
+        
+        s.addChildAt(_drawLineBox(image),1);
         var del = new Laya.Image();
         del.loadImage("home/top/delete.png",0,0,40,40);
-        del.pos(-30,-30);
+        del.pos((image.width*Math.abs(image.scaleX))/-2-5,(image.height*Math.abs(image.scaleY))/-2-5);
         del.on(Laya.Event.MOUSE_DOWN,this,onDelete);
-        s.addChild(del);
+        del.pivot(20,20);
+        del.alpha = 0.6;
+        s.addChildAt(del,2);
         var scale = new Laya.Image();
         scale.loadImage("home/top/scale.png",0,0,40,40);
-        scale.pos(s.width-10,-30);
-        scale.on(Laya.Event.MOUSE_MOVE,this,onScale);
-        scale.on(Laya.Event.MOUSE_DOWN,this,onClickStop);
-        s.addChild(scale);
+        scale.pos((image.width*Math.abs(image.scaleX))/2+5,(image.height*Math.abs(image.scaleY))/-2-5);
+        scale.on(Laya.Event.MOUSE_MOVE,this,onStartScale);
+        scale.on(Laya.Event.MOUSE_UP,this,onStopScale);
+        scale.alpha = 0.6;
+        scale.pivot(20,20);
+        s.addChildAt(scale,3);
         var flipping = new Laya.Image();
         flipping.loadImage("home/top/flipping.png",0,0,40,40);
-        flipping.pos(-30,s.height-10);
+        flipping.pos((image.width*Math.abs(image.scaleX))/-2-5,(image.height*Math.abs(image.scaleY))/2+5);
         flipping.on(Laya.Event.MOUSE_DOWN,this,onFlipping);
-        s.addChild(flipping);
+        flipping.alpha = 0.6;
+        flipping.pivot(20,20);
+        s.addChildAt(flipping,4);
+        
+       
         this.main.home.addChild(s);
-        s.size(s.width,s.height);
-        s.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
+        image.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
+        // image.on(Laya.Event.MOUSE_MOVE,this,onScale);
         s.on(Laya.Event.MOUSE_UP,this,onStopDrag);
     }))
     
+}
+
+function _drawLineBox(s){
+    var line = new Laya.Sprite();             
+        line.pos((s.width*Math.abs(s.scaleX))/-2,(s.height*Math.abs(s.scaleY))/-2);
+        line.graphics.drawLine(-10,-10,s.width*s.scaleX+10,-10,"#efefef",1);
+        line.graphics.drawLine(s.width*s.scaleX+10,-10,s.width*s.scaleX+10,s.height*s.scaleY+10,"#efefef",1);
+        line.graphics.drawLine(s.width*s.scaleX+10,s.height*s.scaleY+10,-10,s.height*s.scaleY+10,"#efefef",1);
+        line.graphics.drawLine(-10,s.height*s.scaleY+10,-10,-10,"#efefef",1);
+        line.alpha = 0.6;
+        return line;
 }
 
 function clearIco(e){
     for(var i in this.main.home._childs){
         var child = this.main.home._childs[i];
         for(var ii in child._childs){
+            if(ii > 0){
             child._childs[ii].visible = false;
+            }
         }
     }
     if(e != null){
@@ -216,7 +254,7 @@ function onDelete(e){
 }
 
 function onFlipping(e){
-    e.target.parent.scaleX *= -1;
+    e.target.parent._childs[0].scaleX *= -1;
     e.stopPropagation();
 }
 
@@ -230,58 +268,83 @@ function onClickMain(e){
     e.stopPropagation();
 }
 
-function onScale(e){
+function onStartScale(e){
+    if(this.scale == null){
+        console.info(e, e.target.parent.scaleX)
+        var percent = 100/(e.target.parent._childs[0].width*e.target.parent.scaleX)
+        console.info("====",percent)
+        e.target.parent.scaleX  *=(1+percent);
+        e.target.parent.scaleY  *=(1+percent);
+        this.scale = e.target;
+         resetIcoPos(e.target);
+    }
+    e.stopPropagation();
+}
+
+function onStopScale(e){
     console.info(e)
+    if(this.scale != null){
+        this.scale = null;
+         this.start_point_info = null;
+    }
+    e.stopPropagation();
+}
+
+function onScale(e){
+    //console.info(e)
+    if(this.scale == null ){
+        return;
+    }
+    // console.info(e)
     if(typeof e.nativeEvent.changedTouches != "undefined"){
         var point = e.nativeEvent.changedTouches[0];
     } else {
         var point = e.nativeEvent;
     }
-    if(this.scale_info == null){
+    if(this.start_point_info == null){
 
-        this.scale_info = point;
+        this.start_point_info = point;
     } else {
         var now_info = point;
-        var scale = now_info.clientY - this.scale_info.clientY;
-        var limit = 0.02;
+        var scale = now_info.pageY - this.start_point_info.pageY;
+        
         //正小 负大
         if(scale == 0){
             //判断左还右移动
-            var scale =  this.scale_info.clientX -now_info.clientX;
+         scale =  this.start_point_info.pageX -now_info.pageX;
            
         }
-         if( e.target.parent.scaleX < 0){
-                 scale *= -1;
-                //  limit = -0.02;
-
-                if(scale > 0){
-                            e.target.parent.scaleX -= limit;
-                            e.target.parent.scaleY += 0.02;
-                        } 
-                        else if(scale <0 ){
-                            e.target.parent.scaleX += limit;
-                            e.target.parent.scaleY -= 0.02;
-                        }
-
-            }
-            else if(e.target.parent.scaleX > 0){
-         if(scale < 0){
-            e.target.parent.scaleX += limit;
-            e.target.parent.scaleY += 0.02;
+         if(scale <  0){
+            this.scale.parent.scaleX += 0.02;
+            this.scale.parent.scaleY += 0.02;
         } 
-        else if(scale >0 ){
-            e.target.parent.scaleX -= limit;
-            e.target.parent.scaleY -= 0.02;
-        }
+        else if(scale >  0 ){
+            if(this.scale.parent.scaleX > 0.5){
+            this.scale.parent.scaleX -= 0.02;
+            this.scale.parent.scaleY -= 0.02;
             }
-        console.info(scale)
-       
+        }
+        //console.info(scale,now_info.pageY , this.start_point_info.pageY);
+        resetIcoPos(this.scale);
+        this.start_point_info = now_info;
     }
-    e.stopPropagation();
+}
+
+function resetIcoPos(image){
+     var scale = 40/(image.parent._childs[2].width * image.parent.scaleX);
+    // image.parent._childs[2].pos((image.width*Math.abs(image.scaleX))/-2-25,(image.height*Math.abs(image.scaleY))/-2-25);
+    //     image.parent._childs[3].pos((image.width*Math.abs(image.scaleX))/2-15,(image.height*Math.abs(image.scaleY))/-2-25);       
+    //     image.parent._childs[4].pos((image.width*Math.abs(image.scaleX))/-2-25,(image.height*Math.abs(image.scaleY))/2-15);
+    image.parent._childs[2].scaleX = scale;
+    image.parent._childs[2].scaleY = scale;
+    image.parent._childs[3].scaleX = scale;
+    image.parent._childs[3].scaleY = scale;
+    image.parent._childs[4].scaleX = scale;
+    image.parent._childs[4].scaleY = scale;
 }
 
 function onClickStop(e){
-    this.scale_info = null;
+    this.start_point_info = null;
     e.stopPropagation();
 }
 
@@ -301,21 +364,38 @@ function showDragRegion()
 	function onStartDrag(e)
 	{
         console.info(e)
+        if(this.scale !=null){
+            e.stopPropagation();
+            return;
+        }
+        
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         clearIco();
-        for(var i in e.target._childs){
-           e.target._childs[i].visible = true;
+        for(var i in e.target.parent._childs){
+           e.target.parent._childs[i].visible = true;
         }
         //dd = e.target;
-        Laya.Tween.to(e.target,{scaleX:e.target.scaleX*1.05,scaleY:e.target.scaleY*1.05},400,Laya.Ease.elasticInOut,null,0);
-		e.target.startDrag(null, true, 100);
+        Laya.Tween.to(e.target.parent,{scaleX:e.target.parent.scaleX*1.05,scaleY:e.target.parent.scaleY*1.05},400,Laya.Ease.elasticInOut,null,0);
+
+		e.target.parent.startDrag(null, true, 100);    
         e.stopPropagation();
 	}
 
     function onStopDrag(e)
 	{
         console.info(e)
+        if(this.scale != null){
+            onStopScale(e);
+            return;
+        }
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
-        Laya.Tween.to(e.target,{scaleX:e.target.scaleX/1.05,scaleY:e.target.scaleY/1.05},400,Laya.Ease.elasticInOut,null,0);
+        Laya.Tween.to(e.target.parent,{scaleX:e.target.parent.scaleX/1.05,scaleY:e.target.parent.scaleY/1.05},400,Laya.Ease.elasticInOut,null,0);
         e.stopPropagation();
 	}
+
+    function onMouseOut(e){
+         if(this.scale != null){
+            onStopScale(e);
+            return;
+        }
+    }
