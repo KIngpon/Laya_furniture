@@ -16,6 +16,7 @@ function onStart(){
      * 开始点击的点
      */
     this.start_point_info = null;
+    this.flipping = false;
     this.start = new ui.startPageUI();
     this.startx = this.start.start.x;
     this.start.start.x = this.start.start.width * -999;
@@ -263,9 +264,14 @@ function onDelete(e){
 
 function onFlipping(e){
     e.target.parent._childs[0].scaleX *= -1;
+    this.flipping = true;
     e.stopPropagation();
 }
 
+function onStopFlipping(e){
+this.flipping = false;
+    e.stopPropagation();
+}
 
 function onClickMain(e){
     console.info(e)
@@ -408,6 +414,10 @@ function showDragRegion()
         if(this.scale != null){
             onStopScale(e);
             return;
+        }
+        if(this.flipping){
+            onStopFlipping(e);
+            return ;
         }
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         Laya.Tween.to(e.target.parent,{scaleX:e.target.parent.scaleX/1.05,scaleY:e.target.parent.scaleY/1.05},400,Laya.Ease.elasticInOut,null,0);
