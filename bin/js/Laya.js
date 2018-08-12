@@ -27,13 +27,13 @@ function onStart(){
 "res/atlas/home/5-window.atlas",
 "res/atlas/home/top.atlas",
 "res/atlas/home/vscroll.atlas",
+"home/music/bg.mp3",
 "res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
     this.start.y = 0;
     this.start.x =(Laya.stage.width - this.start.width) /2;
     Laya.stage.addChild(this.start);
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
-    Laya.SoundManager.playMusic("home/music/bg.mp3",-1);
-    Laya.SoundManager.setMusicVolume(0.1);   
+     
     Laya.stage.on(Laya.Event.MOUSE_MOVE,this,onScale);
     Laya.stage.on(Laya.Event.MOUSE_UP,this,onStopScale);
 }
@@ -41,10 +41,12 @@ function onStart(){
 function onProgress(d){
     this.start.percent.text = "内容加载中..."+(d * 100).toFixed(2)+"%";
     // console.info(d)
-    if(d ==1){
+    if(d >=1){
         this.start.percent.visible = false;
         this.start.start.x = this.startx;
         this.start.start.loadImage(this.start.start.skin)
+        Laya.SoundManager.playMusic("home/music/bg.mp3",-1);
+        Laya.SoundManager.setMusicVolume(0.1);  
     }
 }
 
@@ -217,6 +219,7 @@ function insertSprite(skin){
         flipping.pivot(20,20);
         s.addChildAt(flipping,4);
         
+        s.zOrder = getMaxOrder();
        
         this.main.home.addChild(s);
         image.on(Laya.Event.MOUSE_DOWN,this,onStartDrag);
@@ -376,22 +379,28 @@ function showDragRegion()
         
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         clearIco();
-        var max_order = 0;
-        for(var i in this.main.home._childs){
-            if(this.main.home._childs[i].zOrder > max_order){
-                max_order = this.main.home._childs[i].zOrder;
-            }
-        }
+        
         for(var i in e.target.parent._childs){
            e.target.parent._childs[i].visible = true;
         }
-        e.target.parent.zOrder = max_order + 1;
+        e.target.parent.zOrder = getMaxOrder();
         //dd = e.target;
         Laya.Tween.to(e.target.parent,{scaleX:e.target.parent.scaleX*1.05,scaleY:e.target.parent.scaleY*1.05},400,Laya.Ease.elasticInOut,null,0);
 
 		e.target.parent.startDrag(null, true, 100);    
         e.stopPropagation();
 	}
+
+
+    function getMaxOrder(){
+        var max_order = 0;
+        for(var i in this.main.home._childs){
+            if(this.main.home._childs[i].zOrder > max_order){
+                max_order = this.main.home._childs[i].zOrder;
+            }
+        }
+        return max_order +1;
+    }
 
     function onStopDrag(e)
 	{
