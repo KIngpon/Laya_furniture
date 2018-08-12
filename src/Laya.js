@@ -126,7 +126,7 @@ function onPreviewClick(e){
     // var canvas = hc.getCanvas();
     var image = new Image();
     image.src = canvas.toDataURL();
-    image.width = "100%";
+    image.width = Laya.Browser.clientWidth;
     //image.height = Laya.Browser.clientHeight;
     image.style.position = "fixed"
     image.style.left = 0;
