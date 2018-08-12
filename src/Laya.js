@@ -26,6 +26,7 @@ function onStart(){
 "res/atlas/home/4-cabinet.atlas",
 "res/atlas/home/5-window.atlas",
 "res/atlas/home/top.atlas",
+"res/atlas/home/vscroll.atlas",
 "res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
     this.start.y = 0;
     this.start.x =(Laya.stage.width - this.start.width) /2;
@@ -115,14 +116,18 @@ function onPreview(){
 
 function onPreviewClick(e){
     console.info("preview")
-    var canvas = document.getElementById("layaCanvas");
+    clearIco();
+    this.ts.visible = false;
+    this.preview.visible = false;
+    var htmlC =Laya.stage.drawToCanvas(Laya.stage.width, Laya.stage.height - this.ts.height * this.ts.scaleY,0,0);
+    var canvas = htmlC.getCanvas();
     // var d = canvas.toDataURL();
     // var hc = self.drawToCanvas(Laya.stage.width,Laya.stage.height,0,0);
     // var canvas = hc.getCanvas();
     var image = new Image();
     image.src = canvas.toDataURL();
-    image.width = Laya.Browser.clientWidth;
-    image.height = Laya.Browser.clientHeight;
+    image.width = "100%";
+    //image.height = Laya.Browser.clientHeight;
     image.style.position = "fixed"
     image.style.left = 0;
     image.style.top = 0;
@@ -371,9 +376,16 @@ function showDragRegion()
         
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         clearIco();
+        var max_order = 0;
+        for(var i in this.main.home._childs){
+            if(this.main.home._childs[i].zOrder > max_order){
+                max_order = this.main.home._childs[i].zOrder;
+            }
+        }
         for(var i in e.target.parent._childs){
            e.target.parent._childs[i].visible = true;
         }
+        e.target.parent.zOrder = max_order + 1;
         //dd = e.target;
         Laya.Tween.to(e.target.parent,{scaleX:e.target.parent.scaleX*1.05,scaleY:e.target.parent.scaleY*1.05},400,Laya.Ease.elasticInOut,null,0);
 
