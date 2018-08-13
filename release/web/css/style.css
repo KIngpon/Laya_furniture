@@ -29,17 +29,27 @@
     left:0;top:0;
 }
 #open .bg{
-    background: #fff;
+    background: #000;
     opacity: 0.5;
     width:100%;height:100%;
 }
 #open .main{
 width: 100%;
 position: fixed;
-top:5%;
-left:0;
 display: block;
+left:0;top:0;
 }
 #open .main img{
     width: 85%;
 }
+
+.main-quan{
+    display: none;
+    width: 100%;height:100%;
+    position: fixed;left:0;top:0;
+}
+.main-quan img{position: fixed;
+    right:0;
+    top:0;
+    
+    width: 100%;}

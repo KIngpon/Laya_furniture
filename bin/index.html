@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8' />
-	<title>我的创意之家</title>
+	<title>我的创意之家 - 创新设计联盟</title>
 	<meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
 	/>
 	<meta name="renderer" content="webkit"/>
@@ -18,7 +18,7 @@
 </head>
 <body>
 	<!--以下引用了常用类库，如果不使用，可以删除-->
-	
+	<script type="text/javascript" src="css/zepto.min.js"></script>
 	<!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
 	<script type="text/javascript" src="libs/laya.core.js"></script>
 	<!--提供了微信小游戏的适配-->
@@ -34,6 +34,7 @@
 	
 	<script src="../src/ui/layaUI.max.all.js"></script>
 	<!--jsfile--startTag-->
+
 	<script src="../src/Laya.js"></script>
 	<!--<script src="../src/LayaSample.js"></script>-->
 	<!--jsfile--endTag-->
@@ -44,7 +45,8 @@
 	</div>
 	<div id="open">
 		<div class="bg"></div>
-		<a class="main" href="#" onclick="hideOpen();return false;"><img src="css/img.jpg" alt=""></a>
+		<a class="main" href="#" onclick="showQuan();return false;"><img src="css/img.jpg" alt=""></a>
+		<a class="main-quan" href="#" onclick="hideOpen();return false;"><img src="css/quan.png" alt=""></a>
 	</div>
 </body>
 </html>

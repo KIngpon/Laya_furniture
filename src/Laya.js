@@ -441,9 +441,29 @@ function hideFooter(){
     }
 
     function showOpen(){
-document.getElementById("open").style.display = 'block';
+        // document.getElementById("open").style.display = 'block';
+        Zepto("#open").fadeIn();
     }
 
     function hideOpen(){
         document.getElementById("open").style.display = 'none';
     }
+
+
+    function showQuan(){
+        Zepto("#open .main").hide();
+        Zepto("#open .main-quan").css("display","block");
+    }
+
+    Zepto(function($){
+        var wwidth = $(window).width();
+        var wheight = $(window).height();
+        var iwidth = wwidth * 0.85;
+        var iheight = iwidth * 1334/750;
+        var left = (wwidth - iwidth)/2;
+        var top = (wheight - iheight)/2;
+        Zepto("#open .main img").css({
+            left:left,
+            marginTop:top
+        });
+    });
