@@ -28,6 +28,24 @@ function onStart(){
 "res/atlas/home/5-window.atlas",
 "res/atlas/home/top.atlas",
 "res/atlas/home/vscroll.atlas",
+"home/1-floor/750_floor_img10.png",
+"home/1-floor/750_floor_img2.png",
+"home/1-floor/750_floor_img4.png",
+"home/1-floor/750_floor_img6.png",
+"home/1-floor/750_floor_img8.png",
+"home/1-floor/750_floor_img1.png ",
+"home/1-floor/750_floor_img3.png",
+"home/1-floor/750_floor_img5.png",
+"home/1-floor/750_floor_img7.png",
+"home/1-floor/750_floor_img9.png",
+"home/2-wallpaper/750_wall_img1.png",
+"home/2-wallpaper/750_wall_img3.png",
+"home/2-wallpaper/750_wall_img5.png",
+"home/2-wallpaper/750_wall_img7.png",
+"home/2-wallpaper/750_wall_img2.png",
+"home/2-wallpaper/750_wall_img4.png",
+"home/2-wallpaper/750_wall_img6.png",
+"home/2-wallpaper/750_wall_img8.png",
 "home/music/bg.mp3",
 "res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
     this.start.y = 0;
@@ -442,6 +460,8 @@ function hideFooter(){
 
     function showOpen(){
         // document.getElementById("open").style.display = 'block';
+        Zepto("#open .main").show();
+        Zepto("#open .main-quan").hide();
         Zepto("#open").fadeIn();
     }
 
