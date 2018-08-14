@@ -84,7 +84,7 @@ function onMain(){
     this.main = new ui.mainPageUI();
     this.main.y = 0;
     this.start.x = 0;
-    console.info(this.main.width , Laya.Browser.width);
+   // console.info(this.main.width , Laya.Browser.width);
     this.main.width = Laya.Browser.width;    
     this.main.wall.loadImage("home/top/wall_bg.png",0,0,this.main.wall.width,this.main.wall.height);
     this.main.floor.loadImage("home/top/floot_bg.png",0,0,this.main.floor.width,this.main.floor.height);
@@ -105,7 +105,7 @@ function onTab(){
     this.ts.x = 0;
      
 
-     console.info("==",this.ts.width,Laya.Browser.width,this.ts.height);
+    // console.info("==",this.ts.width,Laya.Browser.width,this.ts.height);
     this.ts.height = this.ts.width /this.ts_proration;
      this.ts.y = Laya.stage.height - this.ts.height * this.ts.scaleY; //933
      //console.info(Laya.stage.heightLaya.Browser.clientHeight, this.ts.height)
@@ -466,6 +466,9 @@ function hideFooter(){
         Zepto("#open .main").show();
         Zepto("#open .main-quan").hide();
         Zepto("#open").fadeIn();
+        setTimeout(function(){
+            Zepto("#open .main-quan").css("display","block");
+        },2000);
     }
 
     function hideOpen(){
@@ -476,6 +479,10 @@ function hideFooter(){
     function showQuan(){
         Zepto("#open .main").hide();
         Zepto("#open .main-quan").css("display","block");
+    }
+
+     function hideQuan(){
+        Zepto("#open .main-quan").hide();
     }
 
     Zepto(function($){
