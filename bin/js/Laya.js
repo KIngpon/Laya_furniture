@@ -48,13 +48,16 @@ function onStart(){
 "home/2-wallpaper/750_wall_img8.png",
 "home/music/bg.mp3",
 "res/atlas/comp.atlas"],null,Laya.Handler.create(this,onProgress,null,false));
-    this.start.y = 0;
-    this.start.x =(Laya.stage.width - this.start.width) /2;
+    
     Laya.stage.addChild(this.start);
+    this.start.y = 0;
+    // this.start.x = (Laya.stage.width - this.start.width)/2;
+    this.start.x =  (1334*(Laya.Browser.width/Laya.Browser.height) - this.start.width)/2;
     this.start.start.on(Laya.Event.CLICK,this,onStartClick);
      
     Laya.stage.on(Laya.Event.MOUSE_MOVE,this,onScale);
     Laya.stage.on(Laya.Event.MOUSE_UP,this,onStopScale);
+    //alert(Laya.stage.width+"/"+Laya.Browser.width+"+"+Laya.Browser.height+"/"+this.start.width+"/"+this.start.x);
 }
 
 function onProgress(d){
