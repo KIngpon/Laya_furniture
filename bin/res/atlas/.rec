@@ -58,12 +58,12 @@ P E191E774 share.png
 R 17463407 top.atlas
 R E26BA130 top.png
 D home/0-home
-R 333810FE bg.png
-P 2EFD7D43 btn_but.png
+R F3BA0DE5 bg.png
+P 2238FA19 btn_but.png
 R A6830469 font.png
 P 2CE01573 img.png
-R E7E4E39E logo.png
-P 958AA27A tle.png
+P F60FA3D5 logo.png
+R B1E5EC06 tle.png
 D home/0-tab
 P AEB63F56 atab_bg.png
 P 4048AD07 atab_bg_white.png
