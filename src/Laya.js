@@ -75,6 +75,7 @@ function onProgress(d){
 function onStartClick(){
     onMain();
     onTab();
+    onLable();
     Laya.stage.removeChildAt(0);
     // console.info(Laya.stage);
     showDragRegion();
@@ -124,6 +125,19 @@ function onTab(){
         }
     }
     onPreview();
+}
+
+function onLable(){
+    this.labelFloor = new Laya.Image();
+    this.labelFloor.x = Laya.stage.width -105;
+     this.labelFloor.y =Laya.stage.height - this.ts.height * this.ts.scaleY -165;
+     Laya.stage.addChild(this.labelFloor);
+     this.labelFloor.visible = false;
+     this.labelWall = new Laya.Image();
+    this.labelWall.x = Laya.stage.width -105;
+     this.labelWall.y = 45;
+     Laya.stage.addChild(this.labelWall);
+     this.labelWall.visible = false;
 }
 
 function onPreview(){
@@ -185,10 +199,20 @@ function onImageClick(f){
                 case "1-floor":
                 this.main.floor.graphics.clear();
                 this.main.floor.loadImage(newskin,0,0,this.main.floor.width,this.main.floor.height);
+                skins[skins.length -1] = "txt.png";
+                var text = skins.join("/");
+                this.labelFloor.graphics.clear();
+                this.labelFloor.loadImage(text,0,0);
+                this.labelFloor.visible = true;
                 break;
                 case "2-wallpaper":
                 this.main.wall.graphics.clear();
                 this.main.wall.loadImage(newskin,0,0,this.main.wall.width,this.main.wall.height);
+                skins[skins.length -1] =  "text_750_"+skins[skins.length - 1].substr(4);
+                var text = skins.join("/");
+                this.labelWall.graphics.clear();
+                this.labelWall.loadImage(text,0,0);
+                this.labelWall.visible = true;
                 break;
                 default:
                     insertSprite(newskin);
@@ -233,6 +257,8 @@ function insertSprite(skin){
         scale.alpha = 0.6;
         scale.pivot(20,20);
         s.addChildAt(scale,3);
+        
+        if(skin.indexOf("window")!==-1){
         var flipping = new Laya.Image();
         flipping.loadImage("home/top/flipping.png",0,0,40,40);
         flipping.pos((image.width*Math.abs(image.scaleX))/-2-5,(image.height*Math.abs(image.scaleY))/2+5);
@@ -240,7 +266,8 @@ function insertSprite(skin){
         flipping.alpha = 0.6;
         flipping.pivot(20,20);
         s.addChildAt(flipping,4);
-        
+        flipping.visible = true;
+        }
         s.zOrder = getMaxOrder();
        
         this.main.home.addChild(s);
@@ -406,9 +433,9 @@ function showDragRegion()
         
 		//鼠标按下开始拖拽(设置了拖动区域和超界弹回的滑动效果)
         clearIco();
-        
+
         for(var i in e.target.parent._childs){
-           e.target.parent._childs[i].visible = true;
+                e.target.parent._childs[i].visible = true;
         }
         e.target.parent.zOrder = getMaxOrder();
         //dd = e.target;
