@@ -9,7 +9,7 @@
         display: none;
 }
 #footer .text{
-    padding-left: 20px;color: #333;font-size: 12px;
+    padding-left: 20px;color: #333;font-size: 12px;line-height: 1.6;
 }
 #footer .link{
     width: 100%;text-align: center;
