@@ -401,8 +401,10 @@ function resetIcoPos(image){
     image.parent._childs[2].scaleY = scale;
     image.parent._childs[3].scaleX = scale;
     image.parent._childs[3].scaleY = scale;
+    if(image.parent._childs.length > 4){
     image.parent._childs[4].scaleX = scale;
     image.parent._childs[4].scaleY = scale;
+    }
 }
 
 function onClickStop(e){
