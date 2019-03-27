@@ -68,7 +68,7 @@ function onProgress(d){
         this.start.start.x = this.startx;
         this.start.start.loadImage(this.start.start.skin)
         Laya.SoundManager.playMusic("home/music/bg.mp3",-1);
-        Laya.SoundManager.setMusicVolume(0.1);  
+        Laya.SoundManager.setMusicVolume(0.4);  
     }
 }
 
@@ -157,7 +157,8 @@ function onPreviewClick(e){
     clearIco();
     this.ts.visible = false;
     this.preview.visible = false;
-    var htmlC =Laya.stage.drawToCanvas(Laya.stage.width, Laya.stage.height - this.ts.height * this.ts.scaleY,0,0);
+     ddd = this;
+    var htmlC =Laya.stage.drawToCanvas(Laya.stage.width, (this.main.wall.height +this.main.floor.height /2),0,0);
     var canvas = htmlC.getCanvas();
     // var d = canvas.toDataURL();
     // var hc = self.drawToCanvas(Laya.stage.width,Laya.stage.height,0,0);

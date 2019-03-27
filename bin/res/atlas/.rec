@@ -90,14 +90,23 @@ P 85198F0F big_floor_img4.png
 P BB06EC8F txt.png
 D home/2-wallpaper
 R 36521D63 750_wall_img1.png
-R CD0E3072 750_wall_img2.png
+R 402BD7BD 750_wall_img2.png
 R 89F09DB8 750_wall_img3.png
+R 003D6530 750_wall_img4.png
+R 6F77B4FB 750_wall_img5.png
+R CD0E3072 750_wall_img6.png
 P AFD6EB07 big_wall_img1.png
-P 38D88B35 big_wall_img2.png
+P FCD65726 big_wall_img2.png
 P D4C1DD5F big_wall_img3.png
+P F447A62A big_wall_img4.png
+P 9C094338 big_wall_img5.png
+P 38D88B35 big_wall_img6.png
 P 7E0B9222 text_750_wall_img1.png
-P 7990056A text_750_wall_img2.png
-P BBE2B8C8 text_750_wall_img3.png
+P 7E0B9222 text_750_wall_img2.png
+P 7990056A text_750_wall_img3.png
+P 7990056A text_750_wall_img4.png
+P BBE2B8C8 text_750_wall_img5.png
+P BBE2B8C8 text_750_wall_img6.png
 D home/3-sofa
 R F29D6BD7 750_sofa_img1.png
 R E68CEB8C 750_sofa_img2.png
@@ -156,6 +165,8 @@ P 0FEB277A 750_window_img14.png
 P D89B87C4 750_window_img15.png
 P 3E4DE296 750_window_img16.png
 P 804A5B2C 750_window_img17.png
+P A6778939 750_window_img18.png
+P 40322AE9 750_window_img19.png
 P 205C032E 750_window_img2.png
 P 49148984 750_window_img3.png
 P 25D1A86D 750_window_img4.png
@@ -173,6 +184,8 @@ P 74CC0665 big_window_img14.png
 P A28DD3B9 big_window_img15.png
 P 1A12625B big_window_img16.png
 P EE0D3415 big_window_img17.png
+P 1871AC37 big_window_img18.png
+P 3E82493B big_window_img19.png
 P 12E53846 big_window_img2.png
 P 326834A5 big_window_img3.png
 P E4C3BB96 big_window_img4.png
